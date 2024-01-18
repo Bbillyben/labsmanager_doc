@@ -1,13 +1,9 @@
-Welcome to Lumache's documentation!
+Welcome to LabsManager's documentation!
 ===================================
 
-**Lumache** (/lu'make/) is a Python library for cooks and food lovers
-that creates recipes mixing random ingredients.
-It pulls data from the `Open Food Facts database <https://world.openfoodfacts.org/>`_
-and offers a *simple* and *intuitive* API.
+**LabsManager** is a Django project to help in science lab management!
 
-Check out the :doc:`usage` section for further information, including
-how to :ref:`installation` the project.
+It helps you follow the labs project, including fund, expense, people involved, contract, milestinones, teams, leaves, etc...
 
 .. note::
 
