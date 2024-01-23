@@ -16,7 +16,7 @@ The main information detail his identity, birthdate, email and enrollement dates
 It can be further describes by adding positions with dates.
 Finally, you can set supervisors, who are other Employees.
 
-Further information on [Employee page](/general/employee) 
+Further information on [Employee page](../employee) 
 
 ### :fontawesome-solid-flask: Project
 
@@ -53,7 +53,7 @@ A single user can be bind to an employee. This allow in right management a user 
 ### Lists
 
 #### tools
-![List Tools](/assets/list_tools.png){ align=right }
+![List Tools](../assets/list_tools.png){ align=right }
 You will meet several lists in Labsmanager, for quite every items. 
 There is some tools available for each, when available. 
 
@@ -66,7 +66,7 @@ There is some tools available for each, when available.
 
 
 #### Actions
-In the majority of tables, you will have access to direct action buttons depending on user rights,![List Tools](/assets/action.png){ align=right }
+In the majority of tables, you will have access to direct action buttons depending on user rights,![List Tools](../assets/action.png){ align=right }
 
 **:fontawesome-solid-shield-halved:{ class="twemoji btn admin_active mini middle"} Admin** : brings you to the admin panel for the current item, to let bypass every limitation from the interface. As usual, you should know what you are doing in admin panel!
 
@@ -79,7 +79,7 @@ In the majority of tables, you will have access to direct action buttons dependi
 
 Panel that has other inset below are collapsable.
 
-![List Tools](/assets/panel_tool.png){ align=right }Some panel heading has tool buttons
+![List Tools](../assets/panel_tool.png){ align=right }Some panel heading has tool buttons
 
 :fontawesome-solid-shield-halved:{ class="twemoji btn admin middle"} **Admin Button**
 

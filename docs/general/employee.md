@@ -21,10 +21,10 @@ The Employee index page list employees, with infos :
 
 ## Basic Information : 
 
-**first name** - **last name** - **email** : as basic identity.
-**entry date** :  Enrollement date of the employee
-**exit date** : withdrawal date of the employee
-**Active** : define wether the Employee is active or not in the lab
+* **first name** - **last name** - **email** : as basic identity.
+* **entry date** :  Enrollement date of the employee
+* **exit date** : withdrawal date of the employee
+* **Active** : define wether the Employee is active or not in the lab
 
 ### Main Panel : Employee General
 
