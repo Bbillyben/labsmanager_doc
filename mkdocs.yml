@@ -1,0 +1,34 @@
+# Project
+site_url: https://labsmanager-doc.readthedocs.io
+site_name: LabsManager Documentation
+site_description: LabsManager - open source science lab management
+site_author: Bbillyben
+
+# Theme
+theme:
+  name: material
+  logo: assets/icon.png
+  favicon: assets/favicon.png
+  custom_dir: docs/.overrides
+
+extra_css:
+  - css/base.css
+
+markdown_extensions:
+  - attr_list
+  - md_in_html
+
+  - pymdownx.emoji:
+      emoji_index: !!python/name:materialx.emoji.twemoji
+      emoji_generator: !!python/name:materialx.emoji.to_svg
+  # - pymdownx.emoji:
+  #     emoji_index: !!python/name:material.extensions.emoji.twemoji
+  #     emoji_generator: !!python/name:material.extensions.emoji.to_svg
+
+nav:
+  - LabsManager:
+    - LabsManager: index.md
+    - Concepts: general/concept.md
+  - Employee:
+    - Employee: general/employee.md
+    # - Export: general/employee_export.md
