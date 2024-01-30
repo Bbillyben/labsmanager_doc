@@ -17,7 +17,9 @@ extra_css:
 markdown_extensions:
   - attr_list
   - md_in_html
-
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
   - pymdownx.emoji:
       emoji_index: !!python/name:materialx.emoji.twemoji
       emoji_generator: !!python/name:materialx.emoji.to_svg
@@ -28,7 +30,15 @@ markdown_extensions:
 nav:
   - LabsManager:
     - LabsManager: index.md
+    - Installation: general/installation.md
     - Concepts: general/concept.md
+    - General process: general/shared_process.md
   - Employee:
     - Employee: general/employee.md
-    # - Export: general/employee_export.md
+    - Report: general/employee_export.md
+  - Project:
+    - project: general/project.md
+    - Report: general/project_export.md
+  - Other:
+    - libraries: other/libraries.md
+    - credits: other/credits.md

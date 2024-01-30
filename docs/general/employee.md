@@ -17,7 +17,7 @@ The Employee index page list employees, with infos :
 * **project quotity** : *curent* Employee project involvment quotity
 * **Superior** : Employee superior, hierarchically
 * **is Active** : if an employee is active, regardless of entry/exit date
-* **Action** : see [Concept/Shared process](/general/concept/#actions)
+* **Action** : see [Concept/Shared process](/general/shared_process/#actions)
 
 ## Basic Information : 
 
@@ -26,7 +26,7 @@ The Employee index page list employees, with infos :
 * **exit date** : withdrawal date of the employee
 * **Active** : define wether the Employee is active or not in the lab
 
-### Main Panel : Employee General
+## Main Panel : Employee General
 
 #### Left side
 
@@ -40,3 +40,48 @@ Here are Employee's position. they are caractérized by a type and a start and e
 Position type are defined in parameters.
 
 Position could be used as filter in different type.
+
+#### Menu
+
+5 actions are available in the dropdown menu : 
+
+* Edit Employee : to edit basic informations
+* Add Info : to add a position/status
+* Add Info : To add a generic information
+* Export Word : to export a word report for the current employee
+* Export PDF :  to export a pdf report for the current employee (see [export employee](../employee_export/))
+
+
+## Contract Panel
+
+List all contract for the current employee with admin/edit/delete actions depending on user rights
+
+## Budget Panel
+
+List all budget targeted for the current employee. See [Project Section] for more details
+
+## Contribution Panel
+
+List all contribution for the current employee.  See [Project Section] for more details
+
+## Project Panel
+
+List all project where the current employee is a participant/involved. 
+The column Status show both project status (:fontawesome-solid-flask:{ class="twemoji ico mini active middle"}) as well as participant status (:fontawesome-solid-user:{ class="twemoji ico mini inactive middle"}) - <span class="active">active</span> /<span class="inactive">inactive</span>
+
+See [Project Section] for more details
+
+## Teams Panel
+
+List all teams for the current employee, as team leader as well as team mate.
+
+
+## Leaves Panel
+
+List all leaves for the current employee.
+
+#### Left side
+on the left side you have a calendar view of the leaves. refer to [Calendar process](../shared_process/#calendar)  for more details
+
+#### right side
+A List all leaves for the current employee, with action button

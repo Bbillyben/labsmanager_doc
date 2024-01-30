@@ -16,8 +16,13 @@ You can subscribe to some items to get periodic report by mail about them.
 Labsmanager is designed to down complexify (!) management system to provide decisionnal rationnal. It comes from the tests of several ERP system that are overkill, and involve a full responsability over the management of the structure, which labs have not.
 
 
+![Labsmanager Hub](assets/hub.png){class="shadow" }
+<span class="legend center">LabsManager Hub, for an admin login</span>
 
 
+!!! note
     This project is under active development.
+
+    Current versions are beta ones
 
 

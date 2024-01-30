@@ -1,4 +1,6 @@
-img[align="left"]{
+/*for image */
+
+.active[align="left"]{
     margin-right: 1em;
 }
 img[align="right"]{
@@ -9,6 +11,7 @@ img.shadow {
     filter: drop-shadow(0.35rem 0.35rem 0.35rem #646c6e);
 }
 
+/* For Text */
 h2{ 
     width: 100%;
     display: block;
@@ -16,6 +19,16 @@ h2{
   box-shadow: 0 7px 7px -6px rgba(41, 128, 185,.5);
 }
 
+.legend{
+    font-style: italic;
+    font-size: smaller;
+
+}
+.center{
+    text-align: center;
+    width: 100%;
+    display: inline-block;
+}
 
 /* for icons */
 
@@ -39,14 +52,14 @@ h3 .twemoji{
     border-left-color: transparent;
     --md-icon-size: 2rem !important;
 }
-.btn.mini{
+.btn.mini, .ico.mini{
     padding: 0.25rem 0.05rem !important;
     font-size: 0.5rem !important;
     border-radius: 0.15rem !important;
     --md-icon-size: 1.2rem !important;
 }
 
-.btn.middle{
+.btn.middle, .ico.middle{
     vertical-align: middle;
 }
 .btn.admin{
@@ -88,4 +101,14 @@ h3 .twemoji{
     background-color: #62bf04;
     color: white;
     border-color: transparent;
+}
+
+.ico{
+
+}
+.active{
+    color: #198754;
+}
+.inactive{
+    color: #dc3545;
 }
