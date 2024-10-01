@@ -10,6 +10,8 @@ theme:
   logo: assets/icon.png
   favicon: assets/favicon.png
   custom_dir: docs/.overrides
+  features:
+    - content.code.copy
 
 extra_css:
   - css/base.css
@@ -20,12 +22,20 @@ markdown_extensions:
   - admonition
   - pymdownx.details
   - pymdownx.superfences
+  # for icon emoji fontawesome
   - pymdownx.emoji:
       emoji_index: !!python/name:materialx.emoji.twemoji
       emoji_generator: !!python/name:materialx.emoji.to_svg
-  # - pymdownx.emoji:
-  #     emoji_index: !!python/name:material.extensions.emoji.twemoji
-  #     emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  # for code higlight
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+      use_pygments: true
+      linenums: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+
 
 nav:
   - LabsManager:
@@ -33,12 +43,18 @@ nav:
     - Installation: general/installation.md
     - Concepts: general/concept.md
     - General process: general/shared_process.md
+    - Right Management: general/rights_mngt.md
   - Employee:
     - Employee: general/employee.md
     - Report: general/employee_export.md
   - Project:
     - project: general/project.md
     - Report: general/project_export.md
+  - Plugins:
+    - plugins: plugins/plugins.md
+    - CalendarMixin: plugins/calendarmixin.md
+    - MailSubscriptionMixin: plugins/mailsubscriptionmixin.md
+    - ScheduleMixin: plugins/schedulemixin.md
   - Other:
     - libraries: other/libraries.md
     - credits: other/credits.md

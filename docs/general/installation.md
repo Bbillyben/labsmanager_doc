@@ -12,7 +12,7 @@ you will need three files to run your docker containers :
 
 <details>
   <summary>docker-compose.yml</summary>
-```
+``` YAML
 version: '3.8'
 services:
     lab-db:
@@ -98,7 +98,7 @@ volumes:
 <details>
   <summary>.env</summary>
 
-```
+``` bash
 DJANGO_ALLOWED_HOSTS=localhost 127.0.0.1 [::1] ['*'] www.mylabsmanager.com
 
 
@@ -174,7 +174,7 @@ SECURE_HSTS_PRELOAD= 'true'
 <details>
   <summary>nginx.prod.conf</summary>
 
-```
+``` yaml
 server {
 
     # Listen for connection on (internal) port 80
@@ -231,9 +231,9 @@ server {
 ```
 </details>
 
-get files :
+#### get files
 
-```
+``` bash
 wget https://github.com/Bbillyben/labsmanager_docker/blob/master/docker-compose.yml
 
 wget https://github.com/Bbillyben/labsmanager_docker/blob/master/nginx.prod.conf
@@ -241,21 +241,29 @@ wget https://github.com/Bbillyben/labsmanager_docker/blob/master/nginx.prod.conf
 wget https://github.com/Bbillyben/labsmanager_docker/blob/master/.template.env -O .env
 ```
 
+#### Install the application 
 
-run update to set up database
+run install
+``` bash
+docker compose run lab-server invoke install
 ```
-docker compose run lab-server invoke update
+or, to directly launche the super user creation process
+``` bash
+docker compose run lab-server invoke install --super_user
 ```
+this will setup databases and install base group for right management as well as default reports templates
 
+#### Create the admin user 
 create super user, and follow the instruction. This will be your first admin user
-
-```
+ 
+``` bash
 docker compose run lab-server invoke superuser
 ```
 
+#### Run the application and login
 run docker compose : 
 
-```
+``` bash
 docker-compose up -d
 ```
 
