@@ -251,13 +251,29 @@ or, to directly launche the super user creation process
 ``` bash
 docker compose run lab-server invoke install --super_user
 ```
-this will setup databases and install base group for right management as well as default reports templates
+this will setup databases and install base group (see [right management page](/general/rights_mngt))  for right management as well as default reports templates
 
 #### Create the admin user 
 create super user, and follow the instruction. This will be your first admin user
  
 ``` bash
 docker compose run lab-server invoke superuser
+```
+#### Create default management values
+Those fixtures are installed by default by the install script.
+
+##### Right management defaults Groups 
+
+Groups are detailed in [right management page](/general/rights_mngt) 
+ 
+``` bash
+docker compose run lab-server invoke loadfixture --fixture group-fixture
+```
+##### Default Reports  
+Install word and pdf default reports in database
+ 
+``` bash
+docker compose run lab-server invoke loadfixture --fixture initial-report-data
 ```
 
 #### Run the application and login
@@ -272,4 +288,5 @@ log into your brand new Labsmanager application
 `localhost:7000`
 
 ## Bare Metal
+
 
