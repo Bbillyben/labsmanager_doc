@@ -1,0 +1,84 @@
+/* LabsManager documentation accents, based on the application light palette. */
+[data-md-color-primary=custom] {
+  --md-primary-fg-color: #176e64;
+  --md-primary-fg-color--light: #288a7c;
+  --md-primary-fg-color--dark: #205d52;
+}
+
+[data-md-color-accent=custom] {
+  --md-accent-fg-color: #176e64;
+}
+
+.md-typeset .lm-landing__intro {
+  max-width: 42rem;
+  font-size: 1.12rem;
+  line-height: 1.6;
+}
+
+.md-typeset .lm-landing__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .65rem;
+  margin: 1.4rem 0 2rem;
+}
+
+.md-typeset .lm-landing__actions .md-button {
+  margin: 0;
+}
+
+.md-typeset .lm-card-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: .8rem;
+  list-style: none;
+  margin: 1rem 0 2rem;
+  padding: 0;
+}
+
+.md-typeset .lm-card-grid > p { margin: 0; }
+
+.md-typeset .lm-card-grid > p > a {
+  display: block;
+  height: 100%;
+  padding: 1rem 1.2rem;
+  border: 1px solid #dde6e2;
+  border-radius: .45rem;
+  background: #fff;
+  color: #324c48;
+  text-decoration: none;
+}
+
+.md-typeset .lm-card-grid > p > a:hover,
+.md-typeset .lm-card-grid > p > a:focus-visible {
+  border-color: #288a7c;
+  background: #e3efeb;
+}
+
+.md-typeset .lm-card-grid > p > a strong {
+  color: #176e64;
+}
+
+.md-typeset .lm-screenshot {
+  margin: 1.25rem 0 1.75rem;
+  max-width: 100%;
+}
+
+.md-typeset .lm-screenshot img {
+  display: block;
+  width: auto;
+  max-width: 100%;
+  height: auto;
+  border: 1px solid #dde6e2;
+  border-radius: .35rem;
+}
+
+.md-typeset .lm-screenshot figcaption {
+  margin-top: .45rem;
+  color: #62736f;
+  font-size: .82rem;
+}
+
+@media (max-width: 42rem) {
+  .md-typeset .lm-card-grid { grid-template-columns: 1fr; }
+  .md-typeset .lm-landing__actions .md-button { width: 100%; text-align: center; }
+}

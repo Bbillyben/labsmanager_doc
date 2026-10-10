@@ -14,33 +14,6 @@ img.shadow {
     filter: drop-shadow(0.35rem 0.35rem 0.35rem #646c6e);
 }
 
-/* For Text */
-h1{ 
-    width: 100%;
-    display: block;
-    background-color: var(--headings-bg-color);
-    color: white !important;
-    padding: 0.5em 1em 0.5em 1em;
-}
-h2{ 
-    width: 100%;
-    display: block;
-    border-bottom: 3px solid #2980b9;
-  box-shadow: 0 7px 7px -6px rgba(41, 128, 185,.5);
-}
-h3{ 
-    width: 100%;
-    display: block;
-    border-bottom: 1px solid #2980b9;
-  box-shadow: 0 7px 7px -6px rgba(41, 128, 185,.5);
-}
-h4{ 
-    width: 100%;
-    display: block;
-    border-bottom: 1px solid #2980b9;
-    padding-left: 0.5em;
-}
-
 .legend{
     font-style: italic;
     font-size: smaller;

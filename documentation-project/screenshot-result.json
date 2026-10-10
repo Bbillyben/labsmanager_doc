@@ -1,0 +1,55 @@
+{
+  "version": 1,
+  "batch": "P1-finance-001",
+  "startedAt": "2026-10-07T07:11:06.770Z",
+  "finishedAt": "2026-10-07T07:11:20.631Z",
+  "success": true,
+  "summary": {
+    "requested": 5,
+    "success": 5,
+    "failed": 0,
+    "skipped": 0
+  },
+  "captures": [
+    {
+      "id": "finance-project-funds",
+      "profile": "labmanager",
+      "scenario": "project-finance",
+      "output": "docs/assets/screenshots/finance/project-funds.png",
+      "notes": "Show the settled ORION Funds table with DM-ORION-BRIDGE, fund references, periods and budgeted, consumed and available columns readable.",
+      "status": "success"
+    },
+    {
+      "id": "finance-fund-overview",
+      "profile": "labmanager",
+      "scenario": "project-finance",
+      "output": "docs/assets/screenshots/finance/fund-overview.png",
+      "notes": "Show DM-ORION-BRIDGE selected in Funds and its settled Overview with cost-type rows and amount, consumed and available totals readable.",
+      "status": "success"
+    },
+    {
+      "id": "finance-fund-expenses",
+      "profile": "labmanager",
+      "scenario": "project-finance",
+      "output": "docs/assets/screenshots/finance/expenses.png",
+      "notes": "Show the settled Expenses section scoped to DM-ORION-BRIDGE with column headings and at least one transaction row readable.",
+      "status": "success"
+    },
+    {
+      "id": "finance-budgets",
+      "profile": "labmanager",
+      "scenario": "project-finance",
+      "output": "docs/assets/screenshots/finance/budget-overview.png",
+      "notes": "Show the settled ORION Budgets table with at least one allocation and amount, consumed and available columns readable.",
+      "status": "success"
+    },
+    {
+      "id": "finance-fund-explorer",
+      "profile": "labmanager",
+      "scenario": "financial-explorer",
+      "output": "docs/assets/screenshots/finance/fund-explorer.png",
+      "notes": "Show the Fund explorer filtered to DM-HELIX-GRANT with multiple visible fund-item rows, filters, result count and sortable headings.",
+      "status": "success"
+    }
+  ]
+}

@@ -1,0 +1,73 @@
+{
+  "version": 1,
+  "batch": "P1-finance-001",
+  "captures": [
+    {
+      "id": "finance-project-funds",
+      "enabled": true,
+      "profile": "labmanager",
+      "scenario": "project-finance",
+      "output": "finance/project-funds.png",
+      "parameters": {
+        "project": "ORION — Optical Resilience",
+        "section": "funds"
+      },
+      "captureType": "region",
+      "notes": "Show the settled ORION Funds table with DM-ORION-BRIDGE, fund references, periods and budgeted, consumed and available columns readable."
+    },
+    {
+      "id": "finance-fund-overview",
+      "enabled": true,
+      "profile": "labmanager",
+      "scenario": "project-finance",
+      "output": "finance/fund-overview.png",
+      "parameters": {
+        "project": "ORION — Optical Resilience",
+        "section": "fund-overview",
+        "fund": "DM-ORION-BRIDGE"
+      },
+      "captureType": "region",
+      "notes": "Show DM-ORION-BRIDGE selected in Funds and its settled Overview with cost-type rows and amount, consumed and available totals readable."
+    },
+    {
+      "id": "finance-fund-expenses",
+      "enabled": true,
+      "profile": "labmanager",
+      "scenario": "project-finance",
+      "output": "finance/expenses.png",
+      "parameters": {
+        "project": "ORION — Optical Resilience",
+        "section": "fund-expenses",
+        "fund": "DM-ORION-BRIDGE"
+      },
+      "captureType": "region",
+      "notes": "Show the settled Expenses section scoped to DM-ORION-BRIDGE with column headings and at least one transaction row readable."
+    },
+    {
+      "id": "finance-budgets",
+      "enabled": true,
+      "profile": "labmanager",
+      "scenario": "project-finance",
+      "output": "finance/budget-overview.png",
+      "parameters": {
+        "project": "ORION — Optical Resilience",
+        "section": "budgets"
+      },
+      "captureType": "region",
+      "notes": "Show the settled ORION Budgets table with at least one allocation and amount, consumed and available columns readable."
+    },
+    {
+      "id": "finance-fund-explorer",
+      "enabled": true,
+      "profile": "labmanager",
+      "scenario": "financial-explorer",
+      "output": "finance/fund-explorer.png",
+      "parameters": {
+        "view": "fund-items",
+        "anchor": "DM-HELIX-GRANT"
+      },
+      "captureType": "viewport",
+      "notes": "Show the Fund explorer filtered to DM-HELIX-GRANT with multiple visible fund-item rows, filters, result count and sortable headings."
+    }
+  ]
+}

@@ -75,6 +75,7 @@ To add customs event to be displayed in the calendar, overwrite the method :
 
 
 Args : 
+
 * request : the request object from labcalendar. request GET or POST contain information about date slots, calendar filters + filters from plugins, including : 
     * type : type filter of leave.model.leave_type
     * type_exact : if has to filter on tree (default for calendar)

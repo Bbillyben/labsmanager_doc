@@ -21,7 +21,7 @@ this folder should contains the __init__.py file to spot it as a module one, and
 
 You class has to extends labsmanager plugin file (plugin.LabManagerPlugin), and one or several of the mixin to enable your plugin doing something!
 
-As for now, plugin mixin allos you to : 
+As for now, plugin mixin allows you to : 
 
 * add event and filter to calendar view: [CalendarEventMixin page](../calendarmixin) 
 * add datas and template to notification emails: [MailSubscriptionMixin page](../mailsubscriptionmixin)

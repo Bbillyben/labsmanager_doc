@@ -1,28 +1,32 @@
-# Welcome to LabsManager Doc
+# LabsManager
 
+<p class="lm-landing__intro">Find people, projects and the information you need for laboratory work.</p>
 
+<div class="lm-landing__actions" markdown>
+[Get started](user-guide/getting-started/index.md){ .md-button .md-button--primary }
+[Browse the User Guide](user-guide/index.md){ .md-button }
+[Find information](user-guide/finding-information/search.md){ .md-button }
+</div>
 
+## Explore the guide
 
-![Image title](assets/icon.png){ align=left class="shadow" }**LabsManager** is a Django project to help in science lab management!
+<div class="lm-card-grid" markdown>
+[**People**<br>Find and view a person](user-guide/people/view-person.md)
 
-It helps you follow the labs project, including fund, expense, people involved, contract, milestones, teams, leaves, etc...
-It has email notification feature, ....
+[**Projects**<br>Open a project and explore its sections](user-guide/projects/view-project.md)
 
-It's developped into a typical French science lab (bio/care), so it reflects funding process, tutellary management and so one in France.
+[**Finding information**<br>Search across LabsManager or narrow a list](user-guide/finding-information/search.md)
 
-With LabsManager you reference Employee, Projects, Funds, Leaves, ...
-You can subscribe to some items to get periodic report by mail about them. 
+[**Daily work**<br>Use navigation and recognise available actions](user-guide/getting-started/interface.md)
+</div>
 
-Labsmanager is designed to down complexify (!) management system to provide decisionnal rationnal. It comes from the tests of several ERP system that are overkill, and involve a full responsability over the management of the structure, which labs have not.
+## At a glance
 
+The home screen gives you a starting point for navigation, dashboards and quick access to areas available to your account.
 
-![Labsmanager Hub](assets/hub.png){class="shadow" }
-<span class="legend center">LabsManager Hub, for an admin login</span>
+<figure class="lm-screenshot" markdown>
+![LabsManager home with main navigation, dashboards and quick links](assets/screenshots/getting-started/home.png)
+<figcaption>The home screen shows the areas available to your account.</figcaption>
+</figure>
 
-
-!!! note
-    This project is under active development.
-
-    Current versions are beta ones
-
-
+*Guide for LabsManager v1.0. [Earlier documentation](other/legacy-overview.md) remains available while this guide grows.*

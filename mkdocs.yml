@@ -10,11 +10,18 @@ theme:
   logo: assets/icon.png
   favicon: assets/favicon.png
   custom_dir: docs/.overrides
+  palette:
+    scheme: default
+    primary: custom
+    accent: custom
   features:
     - content.code.copy
+    - navigation.sections
+    - navigation.top
 
 extra_css:
   - css/base.css
+  - css/labsmanager.css
 
 markdown_extensions:
   - attr_list
@@ -24,8 +31,8 @@ markdown_extensions:
   - pymdownx.superfences
   # for icon emoji fontawesome
   - pymdownx.emoji:
-      emoji_index: !!python/name:materialx.emoji.twemoji
-      emoji_generator: !!python/name:materialx.emoji.to_svg
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
   # for code higlight
   - pymdownx.highlight:
       anchor_linenums: true
@@ -37,24 +44,78 @@ markdown_extensions:
   - pymdownx.snippets
 
 
+plugins:
+  - search
+  - i18n:
+      docs_structure: suffix
+      languages:
+        - locale: en
+          name: English
+          default: true
+        - locale: fr
+          name: Français
+          nav_translations:
+            User Guide: Guide utilisateur
+            Getting started: Premiers pas
+            Finding information: Trouver une information
+            People: Personnes
+            Projects: Projets
+            Projects and contracts: Projets et contrats
+            Leave: Absences
+            People and responsibilities: Personnes et responsabilités
+            Tasks and milestones: Tâches et jalons
+            Project calendar: Calendrier du projet
+            Finance: Finances
+            View a fund: Consulter un financement
+            Budgets and expenses: Budgets et dépenses
+            Fund explorer: Explorateur de fonds
+            Dashboards: Tableaux de bord
+            Use your dashboard: Utiliser son tableau de bord
+            Customize your dashboard: Personnaliser son tableau de bord
+
 nav:
-  - LabsManager:
-    - LabsManager: index.md
-    - Installation: general/installation.md
-    - Concepts: general/concept.md
-    - General process: general/shared_process.md
-    - Right Management: general/rights_mngt.md
-  - Employee:
-    - Employee: general/employee.md
-    - Report: general/employee_export.md
-  - Project:
-    - project: general/project.md
-    - Report: general/project_export.md
-  - Plugins:
-    - plugins: plugins/plugins.md
-    - CalendarMixin: plugins/calendarmixin.md
-    - MailSubscriptionMixin: plugins/mailsubscriptionmixin.md
-    - ScheduleMixin: plugins/schedulemixin.md
-  - Other:
-    - libraries: other/libraries.md
-    - credits: other/credits.md
+  - Home: index.md
+  - User Guide:
+    - Overview: user-guide/index.md
+    - Getting started:
+      - Introduction: user-guide/getting-started/index.md
+      - Understand the interface: user-guide/getting-started/interface.md
+    - Finding information:
+      - Search and filter: user-guide/finding-information/search.md
+    - People:
+      - View a person: user-guide/people/view-person.md
+      - Projects and contracts: user-guide/people/work-and-contracts.md
+      - Leave: user-guide/people/leave.md
+    - Projects:
+      - View a project: user-guide/projects/view-project.md
+      - People and responsibilities: user-guide/projects/people-and-responsibilities.md
+      - Tasks and milestones: user-guide/projects/tasks-and-milestones.md
+      - Project calendar: user-guide/projects/project-calendar.md
+    - Finance:
+      - View a fund: user-guide/finance/view-a-fund.md
+      - Budgets and expenses: user-guide/finance/budgets-and-expenses.md
+      - Fund explorer: user-guide/finance/fund-explorer.md
+    - Dashboards:
+      - Use your dashboard: user-guide/dashboards/use-your-dashboard.md
+      - Customize your dashboard: user-guide/dashboards/customize-your-dashboard.md
+  - Earlier documentation:
+    - LabsManager:
+      - Overview: other/legacy-overview.md
+      - Installation: general/installation.md
+      - Concepts: general/concept.md
+      - General process: general/shared_process.md
+      - Right Management: general/rights_mngt.md
+    - Employee:
+      - Employee: general/employee.md
+      - Report: general/employee_export.md
+    - Project:
+      - project: general/project.md
+      - Report: general/project_export.md
+    - Plugins:
+      - plugins: plugins/plugins.md
+      - CalendarMixin: plugins/calendarmixin.md
+      - MailSubscriptionMixin: plugins/mailsubscriptionmixin.md
+      - ScheduleMixin: plugins/schedulemixin.md
+    - Other:
+      - libraries: other/libraries.md
+      - credits: other/credits.md
