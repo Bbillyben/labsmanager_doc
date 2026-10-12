@@ -94,3 +94,13 @@
 - Trois pages couvrent les quatre sections React Settings Administration, les neuf listes du registre actuel et Data consistency. Les comptes/groupes existants relèvent de Django Admin seulement pour les opérations absentes de React.
 - Deux captures sont retenues : General Settings (`admin`) et le groupe Fund des listes (`admin`). Data consistency est expliqué sans capture dédiée tant qu’un exemple non vide et stable n’est pas confirmé.
 - `ADMIN-instance-001` rapporte 2/2 `success`. ADM-01 General et ADM-02 Fund ont été contrôlées visuellement, intégrées aux pages et ajoutées au manifeste permanent (36 images). Builds MkDocs EN et FR/fallback, liens et images vérifiés.
+
+## Developer — Plugin development — terminé
+
+- Quatre pages développeur couvrent découverte/activation, structure et exemple minimal, routes/permissions, extensions Dashboard/Search/Calendar et tests/débogage. Les quatre anciennes pages plugin pointent vers ce guide et ne répètent plus les anciennes API.
+- Aucun nouveau scénario ni PNG : le registre `SCREENSHOTS.md` et le manifeste permanent restent inchangés (36 captures). Builds EN/FR et liens internes vérifiés.
+
+## Traduction française — guide utilisateur — terminé
+
+- Les 23 pages publiées du guide utilisateur et la page d’accueil ont une version `.fr.md` complète. Les libellés d’interface affichés en anglais restent en anglais ; les explications, liens et textes alternatifs sont en français.
+- À chaque évolution ultérieure d’une page utilisateur anglaise, mettre à jour sa paire française dans le même lot et vérifier les deux builds. Admin, Developer et legacy sont hors de ce lot.

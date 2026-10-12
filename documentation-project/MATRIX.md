@@ -61,3 +61,9 @@ Mise à jour du 11 octobre 2026. Chaque ligne décrit un parcours, pas un écran
 | Administration d’instance | Régler les paramètres globaux, comptes/invitations, notifications et plugins | `admin/instance-administration/index.md` | Admin | Validé | ADM-01 intégrée | Routes React staff ; groupes existants et statut du compte via Django Admin |
 | Listes de référence | Consulter et modifier les neuf listes réellement enregistrées | `admin/instance-administration/reference-lists.md` | Admin | Validé | ADM-02 intégrée | Lecture authentifiée ; ajout/modification selon permissions modèle ; suppression désactivée |
 | Cohérence des données | Examiner, corriger ou accepter les anomalies visibles | `admin/instance-administration/data-consistency.md` | Admin | Validé ; sans capture dédiée | Aucune | Actions soumises aux droits d’exception et d’édition des enregistrements |
+
+| Développement de plugins | Créer, activer, étendre et tester un plugin Python | `developer/plugins/index.md` | Developer | Validé | Aucune | Registre, URLs, Dashboard, Search, Calendar, permissions et limites React vérifiés dans le code |
+
+## Traduction française — guide utilisateur
+
+Les 23 pages publiées du guide utilisateur et la page d’accueil disposent chacune d’une version française `.fr.md`, alignée sur la page anglaise (titres, liens et images). Le périmètre couvre P0 et P1 stabilisés ; Admin, Developer et legacy conservent leur état de traduction antérieur.

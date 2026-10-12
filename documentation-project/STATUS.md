@@ -25,3 +25,7 @@
 **Prochaine action :** lot Admin Installation clos. Les autres lots restent hors de cette passe.
 
 **Admin — Instance administration terminé :** trois pages React finalisées. Quatre sections Administration réservées à `is_staff` ; neuf listes lisibles après connexion et modifiables selon permissions ; Data consistency documenté selon droits. `ADMIN-instance-001` rapporte 2/2 `success` ; ADM-01 General et ADM-02 Fund ont été contrôlées visuellement et intégrées. `screenshot-refresh.json` contient 36 captures intégrées. Builds EN et FR/fallback, liens et images vérifiés.
+
+**Developer — Plugin development terminé :** quatre pages pratiques et quatre renvois historiques finalisés. Découverte, activation, mixins, URLs, droits, Dashboard, Search, Calendar, tests et limites React documentés sur le code courant. Aucune capture nouvelle ; manifeste permanent à 36 images. Builds MkDocs EN/FR et liens vérifiés.
+
+**Traduction française du guide utilisateur — terminée :** les 23 pages utilisateur publiées et la page d’accueil ont une traduction `.fr.md` complète. Navigation française complétée ; parité des pages, liens, images et builds EN/FR vérifiée. Les 36 captures existantes sont réutilisées sans modification du manifeste. Admin, Developer et legacy restent hors du périmètre.

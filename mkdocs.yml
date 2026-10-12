@@ -55,6 +55,13 @@ plugins:
         - locale: fr
           name: Français
           nav_translations:
+            Home: Accueil
+            Overview: Présentation
+            Introduction: Premiers pas
+            Understand the interface: Comprendre l’interface
+            Search and filter: Rechercher et filtrer
+            View a person: Consulter une personne
+            View a project: Consulter un projet
             User Guide: Guide utilisateur
             Getting started: Premiers pas
             Finding information: Trouver une information
@@ -85,6 +92,12 @@ plugins:
             Manage your settings: Gérer ses réglages
             Tools: Outils
             Use the tools: Utiliser les outils
+            Developer: Développeurs
+            Plugin development: Développement de plugins
+            Develop a plugin: Développer un plugin
+            Routes and API: Routes et API
+            Dashboard, Search and Calendar: Dashboard, recherche et calendrier
+            Testing and debugging: Tests et diagnostic
             Admin: Administration
             Instance administration: Administration de l’instance
             Administer an instance: Administrer une instance
@@ -134,6 +147,12 @@ nav:
       - Manage your settings: user-guide/settings/manage-your-settings.md
     - Tools:
       - Use the tools: user-guide/tools/index.md
+  - Developer:
+    - Plugin development:
+      - Develop a plugin: developer/plugins/index.md
+      - Routes and API: developer/plugins/routes-and-api.md
+      - Dashboard, Search and Calendar: developer/plugins/extensions.md
+      - Testing and debugging: developer/plugins/testing-and-debugging.md
   - Admin:
     - Instance administration:
       - Administer an instance: admin/instance-administration/index.md
