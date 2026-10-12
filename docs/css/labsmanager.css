@@ -1,19 +1,153 @@
-/* LabsManager documentation accents, based on the application light palette. */
-[data-md-color-primary=custom] {
-  --md-primary-fg-color: #176e64;
-  --md-primary-fg-color--light: #288a7c;
-  --md-primary-fg-color--dark: #205d52;
+
+/* =========================================================
+   LabsManager Documentation - MkDocs Material
+   Based on LabsManager React design tokens (light theme)
+   ========================================================= */
+
+/* =========================================================
+   1. LabsManager design tokens
+   ========================================================= */
+
+:root {
+  --lm-background: #f6f8fb;
+  --lm-foreground: #243347;
+
+  --lm-card: #ffffff;
+  --lm-card-foreground: #243347;
+
+  --lm-primary: #5b7fa3;
+  --lm-primary-foreground: #ffffff;
+
+  --lm-secondary: #eef2f7;
+  --lm-secondary-foreground: #43566d;
+
+  --lm-muted: #f1f4f7;
+  --lm-muted-foreground: #69788a;
+
+  --lm-accent: #edf3f8;
+  --lm-accent-foreground: #456583;
+
+  --lm-border: #dce4ec;
+  --lm-ring: #7898b8;
+
+  --lm-brand-primary: #36506a;
+  --lm-brand-secondary: #5b7fa3;
+
+  --lm-radius: 0.5rem;
+  --lm-font-sans: Inter, ui-sans-serif, system-ui,
+    -apple-system, BlinkMacSystemFont,
+    "Segoe UI", sans-serif;
+
+  /* Compatibility with existing base.css */
+  --headings-bg-color: var(--lm-primary);
+  --headings-color_bis: var(--lm-primary);
 }
 
-[data-md-color-accent=custom] {
-  --md-accent-fg-color: #176e64;
+/* =========================================================
+   2. MkDocs Material palette
+   ========================================================= */
+
+[data-md-color-scheme="default"] {
+  --md-default-bg-color: var(--lm-background);
+  --md-default-fg-color: var(--lm-foreground);
+  --md-default-fg-color--light: var(--lm-muted-foreground);
+  --md-default-fg-color--lighter: #96a5b6;
+  --md-default-fg-color--lightest: var(--lm-border);
+
+  --md-typeset-color: var(--lm-foreground);
+  --md-typeset-a-color: var(--lm-accent-foreground);
+
+  --md-code-bg-color: var(--lm-secondary);
+  --md-code-fg-color: var(--lm-foreground);
+
+  --md-accent-fg-color: var(--lm-accent-foreground);
+  --md-accent-fg-color--transparent: #edf3f880;
 }
+
+[data-md-color-primary="custom"] {
+  --md-primary-fg-color: var(--lm-primary);
+  --md-primary-fg-color--light: #7898b8;
+  --md-primary-fg-color--dark: var(--lm-brand-primary);
+  --md-primary-bg-color: var(--lm-primary-foreground);
+  --md-primary-bg-color--light: #ffffffb3;
+}
+
+[data-md-color-accent="custom"] {
+  --md-accent-fg-color: var(--lm-accent-foreground);
+  --md-accent-fg-color--transparent: #edf3f880;
+}
+
+/* =========================================================
+   3. Typography
+   ========================================================= */
+
+body {
+  font-family: var(--lm-font-sans);
+}
+
+.md-typeset h1,
+.md-typeset h2,
+.md-typeset h3,
+.md-typeset h4 {
+  color: var(--lm-foreground);
+}
+
+.md-typeset h1 {
+  font-weight: 650;
+}
+
+.md-typeset h2 {
+  font-weight: 600;
+}
+
+.md-typeset a:hover {
+  color: var(--lm-primary);
+}
+
+/* =========================================================
+   4. Header and logo
+   ========================================================= */
+
+.md-header {
+  background-color: var(--lm-primary);
+}
+
+.md-header__button.md-logo img {
+  height: 3rem;
+  width: auto;
+}
+
+.md-header__button.md-logo {
+  margin: 0;
+  padding: 0;
+}
+
+/* =========================================================
+   5. Navigation
+   ========================================================= */
+
+.md-nav__link--active {
+  color: var(--lm-accent-foreground);
+}
+
+.md-nav__link:hover {
+  color: var(--lm-primary);
+}
+
+/* =========================================================
+   6. Landing page - Introduction
+   ========================================================= */
 
 .md-typeset .lm-landing__intro {
   max-width: 42rem;
   font-size: 1.12rem;
   line-height: 1.6;
+  color: var(--lm-secondary-foreground);
 }
+
+/* =========================================================
+   7. Landing page - Actions
+   ========================================================= */
 
 .md-typeset .lm-landing__actions {
   display: flex;
@@ -24,7 +158,24 @@
 
 .md-typeset .lm-landing__actions .md-button {
   margin: 0;
+  border-radius: var(--lm-radius);
 }
+
+.md-typeset .lm-landing__actions .md-button--primary {
+  background-color: var(--lm-primary);
+  border-color: var(--lm-primary);
+  color: var(--lm-primary-foreground);
+}
+
+.md-typeset .lm-landing__actions .md-button--primary:hover {
+  background-color: var(--lm-brand-primary);
+  border-color: var(--lm-brand-primary);
+  color: #ffffff;
+}
+
+/* =========================================================
+   8. Landing page - Cards
+   ========================================================= */
 
 .md-typeset .lm-card-grid {
   display: grid;
@@ -35,28 +186,45 @@
   padding: 0;
 }
 
-.md-typeset .lm-card-grid > p { margin: 0; }
+.md-typeset .lm-card-grid > p {
+  margin: 0;
+}
 
 .md-typeset .lm-card-grid > p > a {
   display: block;
   height: 100%;
   padding: 1rem 1.2rem;
-  border: 1px solid #dde6e2;
-  border-radius: .45rem;
-  background: #fff;
-  color: #324c48;
+
+  border: 1px solid var(--lm-border);
+  border-radius: var(--lm-radius);
+
+  background: var(--lm-card);
+  color: var(--lm-card-foreground);
   text-decoration: none;
+
+  transition:
+    background-color 0.15s ease,
+    border-color 0.15s ease;
 }
 
 .md-typeset .lm-card-grid > p > a:hover,
 .md-typeset .lm-card-grid > p > a:focus-visible {
-  border-color: #288a7c;
-  background: #e3efeb;
+  border-color: var(--lm-primary);
+  background: var(--lm-accent);
+}
+
+.md-typeset .lm-card-grid > p > a:focus-visible {
+  outline: 2px solid var(--lm-ring);
+  outline-offset: 2px;
 }
 
 .md-typeset .lm-card-grid > p > a strong {
-  color: #176e64;
+  color: var(--lm-brand-primary);
 }
+
+/* =========================================================
+   9. Documentation - Screenshots
+   ========================================================= */
 
 .md-typeset .lm-screenshot {
   margin: 1.25rem 0 1.75rem;
@@ -68,17 +236,36 @@
   width: auto;
   max-width: 100%;
   height: auto;
-  border: 1px solid #dde6e2;
-  border-radius: .35rem;
+
+  border: 1px solid var(--lm-border);
+  border-radius: var(--lm-radius);
 }
 
 .md-typeset .lm-screenshot figcaption {
   margin-top: .45rem;
-  color: #62736f;
+  color: var(--lm-muted-foreground);
   font-size: .82rem;
 }
 
+/* =========================================================
+   10. Code blocks
+   ========================================================= */
+
+.md-typeset pre > code {
+  border-radius: var(--lm-radius);
+}
+
+/* =========================================================
+   11. Responsive
+   ========================================================= */
+
 @media (max-width: 42rem) {
-  .md-typeset .lm-card-grid { grid-template-columns: 1fr; }
-  .md-typeset .lm-landing__actions .md-button { width: 100%; text-align: center; }
+  .md-typeset .lm-card-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .md-typeset .lm-landing__actions .md-button {
+    width: 100%;
+    text-align: center;
+  }
 }

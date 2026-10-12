@@ -72,6 +72,29 @@ plugins:
             Dashboards: Tableaux de bord
             Use your dashboard: Utiliser son tableau de bord
             Customize your dashboard: Personnaliser son tableau de bord
+            Calendars: Calendriers
+            Use the calendars: Utiliser les calendriers
+            Teams: Équipes
+            Find and view teams: Trouver et consulter les équipes
+            Manage team members: Gérer les membres d’une équipe
+            Organizations: Organisations
+            Find and view organizations: Trouver et consulter les organisations
+            Reports and exports: Rapports et exports
+            Generate reports: Générer des rapports
+            Settings and preferences: Réglages et préférences
+            Manage your settings: Gérer ses réglages
+            Tools: Outils
+            Use the tools: Utiliser les outils
+            Admin: Administration
+            Instance administration: Administration de l’instance
+            Administer an instance: Administrer une instance
+            Maintain reference lists: Gérer les listes de référence
+            Review data consistency: Examiner la cohérence des données
+            Installation: Installation
+            Installation overview: Présentation de l’installation
+            Docker Compose: Docker Compose
+            Bare metal: Installation sans Docker
+            Initial setup and demo data: Initialisation et données de démonstration
 
 nav:
   - Home: index.md
@@ -98,10 +121,32 @@ nav:
     - Dashboards:
       - Use your dashboard: user-guide/dashboards/use-your-dashboard.md
       - Customize your dashboard: user-guide/dashboards/customize-your-dashboard.md
+    - Calendars:
+      - Use the calendars: user-guide/calendar/use-the-calendar.md
+    - Teams:
+      - Find and view teams: user-guide/teams/find-and-view-teams.md
+      - Manage team members: user-guide/teams/manage-team-members.md
+    - Organizations:
+      - Find and view organizations: user-guide/organizations/find-and-view-organizations.md
+    - Reports and exports:
+      - Generate reports: user-guide/reports-and-exports/generate-reports.md
+    - Settings and preferences:
+      - Manage your settings: user-guide/settings/manage-your-settings.md
+    - Tools:
+      - Use the tools: user-guide/tools/index.md
+  - Admin:
+    - Instance administration:
+      - Administer an instance: admin/instance-administration/index.md
+      - Maintain reference lists: admin/instance-administration/reference-lists.md
+      - Review data consistency: admin/instance-administration/data-consistency.md
+    - Installation:
+      - Installation overview: admin/installation/index.md
+      - Docker Compose: admin/installation/docker.md
+      - Bare metal: admin/installation/bare-metal.md
+      - Initial setup and demo data: admin/installation/initial-setup.md
   - Earlier documentation:
     - LabsManager:
       - Overview: other/legacy-overview.md
-      - Installation: general/installation.md
       - Concepts: general/concept.md
       - General process: general/shared_process.md
       - Right Management: general/rights_mngt.md

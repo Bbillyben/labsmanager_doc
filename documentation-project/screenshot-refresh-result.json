@@ -1,0 +1,183 @@
+{
+  "version": 1,
+  "batch": "visual-refresh-001",
+  "startedAt": "2026-10-11T16:06:20.900Z",
+  "finishedAt": "2026-10-11T16:07:09.105Z",
+  "success": true,
+  "summary": {
+    "requested": 21,
+    "success": 21,
+    "failed": 0,
+    "skipped": 0
+  },
+  "captures": [
+    {
+      "id": "home",
+      "profile": "employee",
+      "scenario": "home",
+      "output": "docs/assets/screenshots/getting-started/home.png",
+      "notes": "Sidebar open; light theme; default home state",
+      "status": "success"
+    },
+    {
+      "id": "navigation",
+      "profile": "employee",
+      "scenario": "navigation",
+      "output": "docs/assets/screenshots/getting-started/navigation.png",
+      "notes": "Sidebar open; top bar visible",
+      "status": "success"
+    },
+    {
+      "id": "global-search-open",
+      "profile": "employee",
+      "scenario": "global-search",
+      "output": "docs/assets/screenshots/finding-information/global-search-open.png",
+      "notes": "Search control open; no query",
+      "status": "success"
+    },
+    {
+      "id": "global-search-results",
+      "profile": "employee",
+      "scenario": "global-search",
+      "output": "docs/assets/screenshots/finding-information/global-search-results.png",
+      "notes": "ORION entered; results visible",
+      "status": "success"
+    },
+    {
+      "id": "employee-overview",
+      "profile": "employee",
+      "scenario": "employee-overview",
+      "output": "docs/assets/screenshots/people/employee-overview.png",
+      "notes": "Employee heading and main sections visible",
+      "status": "success"
+    },
+    {
+      "id": "project-overview",
+      "profile": "employee",
+      "scenario": "project-overview",
+      "output": "docs/assets/screenshots/projects/project-overview.png",
+      "notes": "Project heading and primary sections visible",
+      "status": "success"
+    },
+    {
+      "id": "employee-contracts",
+      "profile": "employee",
+      "scenario": "employee-contracts",
+      "output": "docs/assets/screenshots/people/employee-contracts.png",
+      "notes": "Contracts tab settled; ORION-linked row and column labels visible",
+      "status": "success"
+    },
+    {
+      "id": "employee-projects",
+      "profile": "employee",
+      "scenario": "employee-projects",
+      "output": "docs/assets/screenshots/people/employee-projects.png",
+      "notes": "Participation list settled; ORION row and column labels visible",
+      "status": "success"
+    },
+    {
+      "id": "employee-leave",
+      "profile": "employee",
+      "scenario": "employee-leave",
+      "output": "docs/assets/screenshots/people/employee-leave.png",
+      "notes": "Table settled; at least one synthetic leave row and mode control visible",
+      "status": "success"
+    },
+    {
+      "id": "project-participants",
+      "profile": "employee",
+      "scenario": "project-section",
+      "output": "docs/assets/screenshots/projects/participants.png",
+      "notes": "Participants block settled; names, role, allocation, period and status visible",
+      "status": "success"
+    },
+    {
+      "id": "project-tasks",
+      "profile": "employee",
+      "scenario": "project-planning",
+      "output": "docs/assets/screenshots/projects/tasks.png",
+      "notes": "Task rows, state groups, due information and assignees visible",
+      "status": "success"
+    },
+    {
+      "id": "project-milestones",
+      "profile": "employee",
+      "scenario": "project-planning",
+      "output": "docs/assets/screenshots/projects/milestones.png",
+      "notes": "Milestone rows, state groups, due information and assignees visible",
+      "status": "success"
+    },
+    {
+      "id": "project-calendar",
+      "profile": "employee",
+      "scenario": "calendar",
+      "output": "docs/assets/screenshots/projects/calendar.png",
+      "notes": "Month, displayed period, controls and available synthetic events visible",
+      "status": "success"
+    },
+    {
+      "id": "finance-project-funds",
+      "profile": "labmanager",
+      "scenario": "project-finance",
+      "output": "docs/assets/screenshots/finance/project-funds.png",
+      "notes": "Fund rows, references, periods and balances visible",
+      "status": "success"
+    },
+    {
+      "id": "finance-fund-overview",
+      "profile": "labmanager",
+      "scenario": "project-finance",
+      "output": "docs/assets/screenshots/finance/fund-overview.png",
+      "notes": "Selected fund and Overview totals visible",
+      "status": "success"
+    },
+    {
+      "id": "finance-budgets",
+      "profile": "labmanager",
+      "scenario": "project-finance",
+      "output": "docs/assets/screenshots/finance/budget-overview.png",
+      "notes": "Budget table with amount, consumed and available",
+      "status": "success"
+    },
+    {
+      "id": "finance-fund-expenses",
+      "profile": "labmanager",
+      "scenario": "project-finance",
+      "output": "docs/assets/screenshots/finance/expenses.png",
+      "notes": "Expense headings and populated transaction rows",
+      "status": "success"
+    },
+    {
+      "id": "finance-fund-explorer",
+      "profile": "labmanager",
+      "scenario": "financial-explorer",
+      "output": "docs/assets/screenshots/finance/fund-explorer.png",
+      "notes": "Filters, sortable headings and matching fund-item row visible",
+      "status": "success"
+    },
+    {
+      "id": "dashboard-employee",
+      "profile": "employee",
+      "scenario": "dashboard",
+      "output": "docs/assets/screenshots/dashboards/employee.png",
+      "notes": "Default personal dashboard settled; project, milestone, task and leave widgets identifiable",
+      "status": "success"
+    },
+    {
+      "id": "dashboard-leader",
+      "profile": "leader",
+      "scenario": "dashboard",
+      "output": "docs/assets/screenshots/dashboards/leader.png",
+      "notes": "Default personal dashboard settled; managed projects, team, funding and contract widgets identifiable",
+      "status": "success"
+    },
+    {
+      "id": "dashboard-labmanager",
+      "profile": "labmanager",
+      "scenario": "dashboard",
+      "output": "docs/assets/screenshots/dashboards/lab-manager.png",
+      "notes": "Default personal dashboard settled; projects, funds ending within 60 days, contracts and employee movements identifiable",
+      "status": "success"
+    }
+  ]
+}

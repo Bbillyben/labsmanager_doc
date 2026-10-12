@@ -1,0 +1,461 @@
+{
+  "version": 1,
+  "batch": "visual-refresh-001",
+  "captures": [
+    {
+      "id": "home",
+      "enabled": true,
+      "profile": "employee",
+      "scenario": "home",
+      "output": "getting-started/home.png",
+      "parameters": {},
+      "captureType": "viewport",
+      "notes": "Sidebar open; light theme; default home state"
+    },
+    {
+      "id": "navigation",
+      "enabled": true,
+      "profile": "employee",
+      "scenario": "navigation",
+      "output": "getting-started/navigation.png",
+      "parameters": {},
+      "captureType": "region",
+      "notes": "Sidebar open; top bar visible"
+    },
+    {
+      "id": "global-search-open",
+      "enabled": true,
+      "profile": "employee",
+      "scenario": "global-search",
+      "output": "finding-information/global-search-open.png",
+      "parameters": {
+        "state": "open"
+      },
+      "captureType": "viewport",
+      "notes": "Search control open; no query"
+    },
+    {
+      "id": "global-search-results",
+      "enabled": true,
+      "profile": "employee",
+      "scenario": "global-search",
+      "output": "finding-information/global-search-results.png",
+      "parameters": {
+        "state": "results",
+        "query": "ORION"
+      },
+      "captureType": "viewport",
+      "notes": "ORION entered; results visible"
+    },
+    {
+      "id": "employee-overview",
+      "enabled": true,
+      "profile": "employee",
+      "scenario": "employee-overview",
+      "output": "people/employee-overview.png",
+      "parameters": {
+        "employee": "Camille ORREN"
+      },
+      "captureType": "region",
+      "notes": "Employee heading and main sections visible"
+    },
+    {
+      "id": "project-overview",
+      "enabled": true,
+      "profile": "employee",
+      "scenario": "project-overview",
+      "output": "projects/project-overview.png",
+      "parameters": {
+        "project": "ORION — Optical Resilience"
+      },
+      "captureType": "region",
+      "notes": "Project heading and primary sections visible"
+    },
+    {
+      "id": "employee-contracts",
+      "enabled": true,
+      "profile": "employee",
+      "scenario": "employee-contracts",
+      "output": "people/employee-contracts.png",
+      "parameters": {
+        "employee": "Camille ORREN"
+      },
+      "captureType": "region",
+      "notes": "Contracts tab settled; ORION-linked row and column labels visible"
+    },
+    {
+      "id": "employee-projects",
+      "enabled": true,
+      "profile": "employee",
+      "scenario": "employee-projects",
+      "output": "people/employee-projects.png",
+      "parameters": {
+        "employee": "Camille ORREN"
+      },
+      "captureType": "region",
+      "notes": "Participation list settled; ORION row and column labels visible"
+    },
+    {
+      "id": "employee-leave",
+      "enabled": true,
+      "profile": "employee",
+      "scenario": "employee-leave",
+      "output": "people/employee-leave.png",
+      "parameters": {
+        "employee": "Camille ORREN"
+      },
+      "captureType": "region",
+      "notes": "Table settled; at least one synthetic leave row and mode control visible"
+    },
+    {
+      "id": "project-participants",
+      "enabled": true,
+      "profile": "employee",
+      "scenario": "project-section",
+      "output": "projects/participants.png",
+      "parameters": {
+        "project": "ORION — Optical Resilience",
+        "section": "participants"
+      },
+      "captureType": "region",
+      "notes": "Participants block settled; names, role, allocation, period and status visible"
+    },
+    {
+      "id": "project-tasks",
+      "enabled": true,
+      "profile": "employee",
+      "scenario": "project-planning",
+      "output": "projects/tasks.png",
+      "parameters": {
+        "project": "ORION — Optical Resilience",
+        "view": "tasks",
+        "state": "default"
+      },
+      "captureType": "region",
+      "notes": "Task rows, state groups, due information and assignees visible"
+    },
+    {
+      "id": "project-milestones",
+      "enabled": true,
+      "profile": "employee",
+      "scenario": "project-planning",
+      "output": "projects/milestones.png",
+      "parameters": {
+        "project": "ORION — Optical Resilience",
+        "view": "milestones",
+        "state": "default"
+      },
+      "captureType": "region",
+      "notes": "Milestone rows, state groups, due information and assignees visible"
+    },
+    {
+      "id": "project-calendar",
+      "enabled": true,
+      "profile": "employee",
+      "scenario": "calendar",
+      "output": "projects/calendar.png",
+      "parameters": {
+        "scope": "project",
+        "project": "ORION — Optical Resilience",
+        "view": "month"
+      },
+      "captureType": "region",
+      "notes": "Month, displayed period, controls and available synthetic events visible"
+    },
+    {
+      "id": "finance-project-funds",
+      "enabled": true,
+      "profile": "labmanager",
+      "scenario": "project-finance",
+      "output": "finance/project-funds.png",
+      "parameters": {
+        "project": "ORION — Optical Resilience",
+        "section": "funds"
+      },
+      "captureType": "region",
+      "notes": "Fund rows, references, periods and balances visible"
+    },
+    {
+      "id": "finance-fund-overview",
+      "enabled": true,
+      "profile": "labmanager",
+      "scenario": "project-finance",
+      "output": "finance/fund-overview.png",
+      "parameters": {
+        "project": "ORION — Optical Resilience",
+        "section": "fund-overview",
+        "fund": "DM-ORION-BRIDGE"
+      },
+      "captureType": "region",
+      "notes": "Selected fund and Overview totals visible"
+    },
+    {
+      "id": "finance-budgets",
+      "enabled": true,
+      "profile": "labmanager",
+      "scenario": "project-finance",
+      "output": "finance/budget-overview.png",
+      "parameters": {
+        "project": "ORION — Optical Resilience",
+        "section": "budgets"
+      },
+      "captureType": "region",
+      "notes": "Budget table with amount, consumed and available"
+    },
+    {
+      "id": "finance-fund-expenses",
+      "enabled": true,
+      "profile": "labmanager",
+      "scenario": "project-finance",
+      "output": "finance/expenses.png",
+      "parameters": {
+        "project": "ORION — Optical Resilience",
+        "section": "fund-expenses",
+        "fund": "DM-ORION-BRIDGE"
+      },
+      "captureType": "region",
+      "notes": "Expense headings and populated transaction rows"
+    },
+    {
+      "id": "finance-fund-explorer",
+      "enabled": true,
+      "profile": "labmanager",
+      "scenario": "financial-explorer",
+      "output": "finance/fund-explorer.png",
+      "parameters": {
+        "view": "fund-items",
+        "anchor": "DM-HELIX-GRANT"
+      },
+      "captureType": "viewport",
+      "notes": "Filters, sortable headings and matching fund-item row visible"
+    },
+    {
+      "id": "dashboard-employee",
+      "enabled": true,
+      "profile": "employee",
+      "scenario": "dashboard",
+      "output": "dashboards/employee.png",
+      "parameters": {
+        "template": "employee"
+      },
+      "captureType": "viewport",
+      "notes": "Default personal dashboard settled; project, milestone, task and leave widgets identifiable"
+    },
+    {
+      "id": "dashboard-leader",
+      "enabled": true,
+      "profile": "leader",
+      "scenario": "dashboard",
+      "output": "dashboards/leader.png",
+      "parameters": {
+        "template": "leader"
+      },
+      "captureType": "viewport",
+      "notes": "Default personal dashboard settled; managed projects, team, funding and contract widgets identifiable"
+    },
+    {
+      "id": "dashboard-labmanager",
+      "enabled": true,
+      "profile": "labmanager",
+      "scenario": "dashboard",
+      "output": "dashboards/lab-manager.png",
+      "parameters": {
+        "template": "labmanager"
+      },
+      "captureType": "viewport",
+      "notes": "Default personal dashboard settled; projects, funds ending within 60 days, contracts and employee movements identifiable"
+    },
+    {
+      "id": "calendar-general-month",
+      "enabled": true,
+      "profile": "employee",
+      "scenario": "calendar",
+      "output": "calendars/personal.png",
+      "parameters": {
+        "scope": "personal",
+        "view": "month"
+      },
+      "captureType": "region",
+      "notes": "Show the settled General calendar at /app/calendars in English, in Calendar and Month mode, with period controls, filters and visible synthetic leave events. No loading or open sheet."
+    },
+    {
+      "id": "teams-list",
+      "enabled": true,
+      "profile": "leader",
+      "scenario": "list-view",
+      "output": "teams/list.png",
+      "parameters": {
+        "entity": "teams",
+        "state": "default"
+      },
+      "captureType": "viewport",
+      "notes": "Show the settled Teams list in English with Name, Leader and Members columns, filters, and a Quantum Materials Studio row. No loading or open sheet."
+    },
+    {
+      "id": "teams-information",
+      "enabled": true,
+      "profile": "leader",
+      "scenario": "team-section",
+      "output": "teams/information.png",
+      "parameters": {
+        "team": "Quantum Materials Studio",
+        "section": "information"
+      },
+      "captureType": "region",
+      "notes": "Show the settled Quantum Materials Studio Information section in English, with Elina Varrel as leader and populated member rows, dates and status. No open sheet or menu."
+    },
+    {
+      "id": "organizations-institutions-list",
+      "enabled": true,
+      "profile": "labmanager",
+      "scenario": "list-view",
+      "output": "organizations/institutions-list.png",
+      "parameters": {
+        "entity": "institutions",
+        "state": "default"
+      },
+      "captureType": "viewport",
+      "notes": "Show the settled Institutions list in English with search, short/full name columns, sorting and NVAU — North Vale Academic University visible. No loading or open sheet."
+    },
+    {
+      "id": "organizations-funder-information",
+      "enabled": true,
+      "profile": "labmanager",
+      "scenario": "organization-section",
+      "output": "organizations/funder-information.png",
+      "parameters": {
+        "entity": "funder",
+        "organization": "VRC — Vale Research Council",
+        "section": "information"
+      },
+      "captureType": "region",
+      "notes": "Show the settled VRC — Vale Research Council Funder record in English, Information tab active with name, project/contract summary and additional-information state visible. No loading, open sheet or stray menu."
+    },
+    {
+      "id": "reports-employee-word-dialog",
+      "enabled": true,
+      "profile": "labmanager",
+      "scenario": "entity-report",
+      "output": "reports-and-exports/employee-word-dialog.png",
+      "parameters": {
+        "entity": "employee",
+        "target": "Camille ORREN",
+        "format": "word"
+      },
+      "captureType": "viewport",
+      "notes": "Show the settled English Employee Word report dialog for Camille ORREN, a selected template, visible From/To period and enabled Export button. No loading, open action menu or download."
+    },
+    {
+      "id": "reports-project-pdf-dialog",
+      "enabled": true,
+      "profile": "labmanager",
+      "scenario": "entity-report",
+      "output": "reports-and-exports/project-pdf-dialog.png",
+      "parameters": {
+        "entity": "project",
+        "target": "ORION — Optical Resilience",
+        "format": "pdf"
+      },
+      "captureType": "viewport",
+      "notes": "Show the settled English Project PDF report dialog for ORION — Optical Resilience, a selected template and enabled Export button. No From/To period, loading, open action menu or download."
+    },
+    {
+      "id": "settings-user-account",
+      "enabled": true,
+      "profile": "employee",
+      "scenario": "settings-section",
+      "output": "settings/user.png",
+      "parameters": {
+        "section": "user"
+      },
+      "captureType": "viewport",
+      "notes": "Show the settled English User settings page with the User settings section active, account facts and email area visible. No loading, account menu, password sheet or other overlay."
+    },
+    {
+      "id": "settings-interface",
+      "enabled": true,
+      "profile": "employee",
+      "scenario": "settings-section",
+      "output": "settings/interface.png",
+      "parameters": {
+        "section": "interface"
+      },
+      "captureType": "region",
+      "notes": "Show the settled English Interface section active with login destination, organization switch, map provider and theme controls visible. Do not change a preference; no loading or overlay."
+    },
+    {
+      "id": "settings-notifications",
+      "enabled": true,
+      "profile": "employee",
+      "scenario": "settings-section",
+      "output": "settings/notifications.png",
+      "parameters": {
+        "section": "notifications"
+      },
+      "captureType": "viewport",
+      "notes": "Show the settled English Notifications section active with email status, frequency, language and useful notification controls visible. No loading, menu, modal, test email or preview."
+    },
+    {
+      "id": "tools-contracts",
+      "enabled": true,
+      "profile": "labmanager",
+      "scenario": "list-view",
+      "output": "tools/contracts.png",
+      "parameters": {
+        "entity": "contracts",
+        "state": "default"
+      },
+      "captureType": "viewport",
+      "notes": "Show the settled English Contract Hub list with filters, sortable headings, result count and visible contract rows. No selected detail, export dialog, loading or overlay."
+    },
+    {
+      "id": "tools-import-employees",
+      "enabled": true,
+      "profile": "admin",
+      "scenario": "tool-view",
+      "output": "tools/import.png",
+      "parameters": {
+        "tool": "import",
+        "selection": "employees"
+      },
+      "captureType": "viewport",
+      "notes": "Show the settled English Import tool with Employees selected, template download and file chooser visible. No file loaded, upload, check, confirmation, result or overlay."
+    },
+    {
+      "id": "tools-organization-chart",
+      "enabled": true,
+      "profile": "labmanager",
+      "scenario": "tool-view",
+      "output": "tools/organization-chart.png",
+      "parameters": {
+        "tool": "organization-chart"
+      },
+      "captureType": "viewport",
+      "notes": "Show the settled English Organization chart with a populated hierarchy and Search, Current only, Fit and Print controls visible. No loading, search results, menu or overlay."
+    },
+    {
+      "id": "admin-general-settings",
+      "enabled": true,
+      "profile": "admin",
+      "scenario": "admin-settings-section",
+      "output": "admin/instance/general-settings.png",
+      "parameters": {
+        "section": "general"
+      },
+      "captureType": "viewport",
+      "notes": "Settings > Administration > General active; global setting rows and values settled in English; no edit sheet, loader, menu or stray panel."
+    },
+    {
+      "id": "admin-reference-fund",
+      "enabled": true,
+      "profile": "admin",
+      "scenario": "admin-reference-list",
+      "output": "admin/instance/reference-fund.png",
+      "parameters": {
+        "group": "fund"
+      },
+      "captureType": "viewport",
+      "notes": "Settings > LabsManager lists > Fund active; cost-type hierarchy and controls loaded in English; no form, loader, menu or stray panel."
+    }
+  ]
+}

@@ -8,7 +8,7 @@ The source of truth for capture priority and filenames remains `SCREENSHOTS.md`;
 
 ## Current workflow and contract
 
-Codex Documentation writes `documentation-project/screenshot-request.json` using JSON contract v1 (`version`, `batch`, `captures[]`; each capture has `id`, `enabled`, `profile`, `scenario`, `output`, `parameters`, `captureType`, `notes`). The Windows engine is run separately with `npm run capture:request`; it writes PNGs below `docs/assets/screenshots/` and `documentation-project/screenshot-result.json`. Codex checks the batch, each `status: success`, file presence and visual state before integration. At the time of the original audit, the request/result pair was `P1-people-001`. The current request/result pair is `P1-finance-001`; all five Finance captures report success and have passed documentation visual review.
+Codex Documentation writes `documentation-project/screenshot-request.json` using JSON contract v1 (`version`, `batch`, `captures[]`; each capture has `id`, `enabled`, `profile`, `scenario`, `output`, `parameters`, `captureType`, `notes`). The Windows engine is run separately with `npm run capture:request`; it writes PNGs below `docs/assets/screenshots/` and `documentation-project/screenshot-result.json`. Codex checks the batch, each `status: success`, file presence and visual state before integration. At the time of the original audit, the request/result pair was `P1-people-001`. The current request/result pair is `P1-tools-organization-chart-001`; its single capture passed result and visual review. The earlier `P1-tools-001` batch yielded two integrated images and one rejected attempt. Integrated captures are also listed in the permanent `screenshot-refresh.json`.
 
 Keep **version 1**. Every proposed behavior fits an existing `scenario` plus a JSON `parameters` object; no new top-level field or result format is required. The catalogue and parameter validation are engine behavior, not a wire-format change. Reject unknown scenario names, parameter names and enum values. `notes` may clarify editorial intent but must never be required to disambiguate navigation, filtering or the target state. Existing outputs and IDs remain valid. Profiles are the existing request field. `labmanager` is confirmed and selected for the P1 Finance batch; `employee` and `leader` remain valid for their respective confirmed scenarios.
 
@@ -16,7 +16,7 @@ Defaults below apply only where stated. A record identifier is a controlled synt
 
 ## Confirmed catalogue subset for P1 Projects (6 October 2026)
 
-Codex Capture now supports, with profile `employee` and the exact project anchor `ORION — Optical Resilience`: `project-section` with `section=overview|participants`; `project-planning` with `view=tasks|milestones` and `state=default`; and `calendar` with `scope=project`, `view=month`. `project-overview` remains a compatible alias. `calendar(scope=personal,view=month)` is also supported but is outside this lot. The `funds`, `overdue`, Gantt and other values below remain **proposals**, not supported request values for `P1-projects-001`. The participant region is a block on Project Overview; tasks and milestones are filtered views of one React section. The corrected `P1-projects-001` run produced distinct Task and Milestone PNGs with the requested kind filters active; both passed visual review and are integrated.
+Codex Capture now supports, with profile `employee` and the exact project anchor `ORION — Optical Resilience`: `project-section` with `section=overview|participants`; `project-planning` with `view=tasks|milestones` and `state=default`; and `calendar` with `scope=project`, `view=month`. `project-overview` remains a compatible alias. `calendar(scope=personal,view=month)` is supported and is used for the global General calendar request in P1 Calendars. The `funds`, `overdue`, Gantt and other values below remain **proposals**, not supported request values for `P1-projects-001`. The participant region is a block on Project Overview; tasks and milestones are filtered views of one React section. The corrected `P1-projects-001` run produced distinct Task and Milestone PNGs with the requested kind filters active; both passed visual review and are integrated.
 
 ## Existing scenarios and migration
 
@@ -77,28 +77,28 @@ The dataset description proposes `DM-ORION-BRIDGE` as nearly consumed and ending
 
 The older proposal table and historical coverage matrix below predate this React Finance audit and the subsequent primitive implementation. For P1 Finance, the definitions in this section and `SCREENSHOTS.md` supersede their proposed `fund-section`, `fund-explorer` and `financial-curve` rows; those older names are **not implemented** or valid request values. `project-section(section=funds)` is likewise still unsupported.
 
-## P1 Dashboards audit and Capture coverage (7 October 2026)
+## P1 Dashboards audit and Capture coverage (updated 11 October 2026)
 
 React has a personal Dashboard page for any signed-in user. When a user has no personal dashboard, the page asks for a name and one of four starting templates: Employee, Leader, Lab manager or Blank; none is preselected. The seed-42 dataset instead precreates one default personal dashboard for each relevant account: `employee` → **Employee overview** from `employee`, `leader` → **Team overview** from `leader`, and `labmanager` → **Laboratory overview** from the React/backend template key `lab-manager`. A project Dashboard is a separate context. Widgets resolve visible records under the selected account; do not treat a template choice as a permission grant.
 
 | Prepared personal view | Profile | Seed-42 default widget sources and intent | Capture status |
 | --- | --- | --- | --- |
-| Employee overview | `employee` | Participated projects (count and list), own milestones, own tasks and upcoming leaves | `dashboard(template=employee)` confirmed; P1-17 ready, batch deferred. |
-| Team overview | `leader` | Managed projects (count and overdue list), managed-project milestones, subordinate employees and leaves, managed-project funds, contracts ending within 30 days | `dashboard(template=leader)` not confirmed by Capture; P1-18 blocked. |
-| Laboratory overview | `labmanager` | Visible projects (count and overdue list), upcoming milestones, visible funds (count and those ending within 60 days), contracts ending within 30 days, employee departures within 90 days | `dashboard(template=labmanager)` not confirmed by Capture; P1-19 blocked. |
+| Employee overview | `employee` | Participated projects (count and list), own milestones, own tasks and upcoming leaves | `dashboard(template=employee)` confirmed; P1-17 requested in `P1-dashboards-001`. |
+| Team overview | `leader` | Managed projects (count and overdue list), managed-project milestones, subordinate employees and leaves, managed-project funds, contracts ending within 30 days | `dashboard(template=leader)` validated in Chromium with `profile=leader`; P1-18 requested. |
+| Laboratory overview | `labmanager` | Visible projects (count and overdue list), upcoming milestones, visible funds (count and those ending within 60 days), contracts ending within 30 days, employee departures within 90 days | `dashboard(template=labmanager)` validated in Chromium with `profile=labmanager`; P1-19 requested. |
 
 The dashboard UI supports selecting another personal dashboard and marking one as default. **Customize** exposes a source catalogue, widget configuration/add/remove, drag and resize on wide screens, and Save layout; personal dashboard management also includes rename, duplicate, order and delete. There is no reset-layout control in the audited React page. No separate screenshot is needed for this basic guidance. `core.expense-trend` is a line-chart source with monthly visible expenses; it is preconfigured in the **project** template, not in the three personal demo templates. It may be added to a compatible dashboard, but a dedicated widget image is not needed in P1 Dashboards. Do not request a Finance curve or assume the personal screenshots show it.
 
-### Required Capture extension within the existing `dashboard` scenario
+### Available values within the existing `dashboard` scenario
 
-Keep JSON v1, scenario `dashboard`, required `parameters.template`, no optional parameters or new scenario. `template=employee` with `profile=employee` already works. Add exactly these two bounded values:
+Keep JSON v1, scenario `dashboard`, required `parameters.template`, no optional parameters or new scenario. Three bounded combinations are validated in Chromium. `template=employee` with `profile=employee` is already confirmed; the other two are:
 
 - `template=leader`, `profile=leader`: open the seeded **Team overview** default personal dashboard; verify its name, Leader account context and the managed-project, team, funding and contract widget sources before a `viewport` capture. P1-18.
 - `template=labmanager`, `profile=labmanager`: open the seeded **Laboratory overview** default personal dashboard; verify its name, Lab manager account context and the project, fund, contract and employee-movement widget sources before a `viewport` capture. P1-19. The engine maps semantic `labmanager` to the React/backend starting template key `lab-manager`; do not put that internal key in the request.
 
 For all three values, wait for dashboard detail and widget data to settle, reject loading and unavailable/error states for the distinguishing widgets, verify the correct default dashboard and the expected widget set, then capture a useful English viewport including heading and visible first widgets. An individual list may legitimately be empty when no record matches its filter; do not substitute a wrong dashboard to avoid that state. The seven-widget layouts may extend below a 1440 × 900 viewport; validate the complete widget set before capture, but do not require every widget to appear above the fold. Distinguish unsupported enum/profile, missing seeded dashboard, wrong selected template, missing or errored distinguishing widgets, and UI drift. The request is semantic only; no selector, route, click sequence or database ID is needed.
 
-Do not create `P1-dashboards-001` until these two values are implemented and checked with their matching profiles. Keep the valid `P1-finance-001` request/result pair unchanged in this preparation pass.
+`P1-dashboards-001` now requests all three validated values with matching profiles. The previous `P1-finance-001` result remains untouched until the manual engine run; no Dashboard image is integrated yet.
 
 ## Proposed families and bounded parameters
 
@@ -120,8 +120,8 @@ The following are semantic inputs. `captureType` remains in each v1 capture entr
 | --- | --- | --- | --- |
 | `project-planning` | Show project tasks, milestones or an overdue item. Required `project`, `view`; optional `state`. | `project=ORION — Optical Resilience` for normal views; `SELENE — Sustainable Signals` or `LYRA — Learning Research Arrays` only after confirming an overdue fixture. `view=tasks\|milestones\|gantt`; `state=default\|overdue`, default `default`. `overdue` is valid only when a visible overdue item is verified; do not infer it from project end date. | Open project planning, choose requested view, include dates/status and relevant rows. A combined tasks-and-milestones region is acceptable for P1-06 if both are legible; otherwise request two images. `employee` is confirmed for ORION tasks and milestones; other views remain subject to verification. |
 | `fund-section` | Historical proposal superseded by `project-finance`. | Do not implement for P1 Finance. | React has no standalone fund section; budgets are a project section. |
-| `dashboard` | Show a seeded personal dashboard. Required `template`; no default. | `employee` is confirmed with `profile=employee`; `leader` and `labmanager` are required but not yet confirmed. | Capture a settled viewport with the matching profile and template widgets; see P1 Dashboards audit above. |
-| `calendar` | Show a calendar in a documented scope. Required `scope`; conditional `project`; optional `view`, `dateAnchor`. | `scope=personal\|project\|resource`; `project=ORION — Optical Resilience` required for `project`, forbidden otherwise. Initial `view=month` (default) for personal/project; `resource` view value and availability need verification before implementation. `dateAnchor` is an ISO date within synthetic fixture periods; omit to use the engine's fixed demo date, **not** wall-clock today. | Capture period controls, filters and visible events after navigation. `employee` is confirmed for personal and ORION project month views; lab manager resource remains to verify. P1-07 and P1-21 share one project-calendar behavior/image unless the pages need different context. Do not require 15-day, 2-month or year images merely because controls exist. |
+| `dashboard` | Show a seeded personal dashboard. Required `template`; no default. | `employee`, `leader` and `labmanager` are confirmed with the matching `employee`, `leader` and `labmanager` profiles. | Capture a settled viewport with the matching profile and template widgets; see P1 Dashboards audit above. |
+| `calendar` | Show a calendar in a documented scope. Required `scope`; conditional `project`; optional `view`, `dateAnchor`. | `scope=personal\|project` for confirmed views; `project=ORION — Optical Resilience` required for `project`, forbidden otherwise. Initial `view=month` (default) for personal/project. A Resources mode within `personal` and a global Projects tab need separate bounded parameters before capture. `dateAnchor` is an ISO date within synthetic fixture periods; omit to use the engine's fixed demo date, **not** wall-clock today. | Capture period controls, filters and visible events after navigation. `employee` is confirmed for personal and ORION project month views. The React global General calendar has a Resources mode for visible employees; it is not a separate UserSetting and Capture has no confirmed `mode=resources` parameter. The global Project calendar is a multi-project Gantt; `scope=project` opens a single project record and cannot represent this tab. P1-07 remains the single-project image, while P1-21/22 are deferred images for the global tabs. Do not require 15-day, 2-month or year images merely because controls exist. |
 | `list-view` | Show a normal or filtered list where shared list behavior is confirmed. Required `entity`; optional `state`; conditional `anchor`. | Initial `entity=people\|projects`; `state=default\|filtered`; default `default`. `anchor=Camille ORREN` for people or `ORION — Optical Resilience` for projects, required for `filtered`. Expand to `funds\|expenses\|contracts` only after confirming the same filter/result semantics. | Capture list heading, active filter and matching row/count for `filtered`. Filter recipe is a bounded engine preset tied to the entity/anchor; no arbitrary filter fields or selectors. `employee` for common lists. |
 | `export-action` | Show a visible export entry point. Required `source`; optional `record`. | Initial `source=project-record\|project-list\|people-list`; `record=ORION — Optical Resilience` only for `project-record`. Support each source only after the action and profile are verified. No format enum until the UI exposes a confirmed choice. | Open the source and export menu/control, capture the action and its context; `leader` likely. Separate from `list-view` because a record export is not a list state. |
 | `fund-explorer` | Historical proposal superseded by `financial-explorer`. | Do not implement this name for P1 Finance. | The verified React view lists fund items; see the required primitive above. |
@@ -131,7 +131,56 @@ The following are semantic inputs. `captureType` remains in each v1 capture entr
 
 ### C — Later or conditional, after product verification
 
-Do not implement a general editing framework for create/update forms. If a P1 workflow is confirmed and needs an image, add a narrowly scoped `action-sheet` with bounded `subject=project|task|milestone|leave|expense`, `action=create|edit` and a verified synthetic anchor/profile. Do not expose arbitrary forms, field names or permissions. A report chooser on a legacy route needs a separate `report-selection` scenario if the v1 guide retains that workflow. Dashboard editing, advanced search, imports, transversal contract/finance explorers, printing and P3 reference screens likewise require targeted UI verification before a family/enum is committed. The inventory below records them as **conditional**, not an instruction to implement now.
+Do not implement a general editing framework for create/update forms. If a P1 workflow is confirmed and needs an image, add a narrowly scoped `action-sheet` with bounded `subject=project|task|milestone|leave|expense`, `action=create|edit` and a verified synthetic anchor/profile. Do not expose arbitrary forms, field names or permissions. P1 Reports & Exports uses the React `ReportExportDialog` on Employee/Project records; its needed capture state is specified below, without a legacy chooser. Dashboard editing, advanced search, imports, transversal contract/finance explorers, printing and P3 reference screens likewise require targeted UI verification before a family/enum is committed. P1 Tools has now verified the corresponding React screens; its concrete capture needs are specified in the P1 Tools section below. The inventory below records them as **conditional**, not an instruction to implement now.
+
+## P1 Teams — confirmed Capture capability
+
+Capture supports the React Teams list with `list-view(entity=teams,state=default)` and the Quantum Materials Studio Information section with `team-section(team=Quantum Materials Studio,section=information)`. Both use the existing JSON v1 runner with profile `leader`. The two states were confirmed by Codex Capture and produced two matching `success` results in `P1-teams-001`; both PNGs passed visual review and are integrated.
+
+| Capture | Route and expected settled state | Demo selection | Confirmed request |
+| --- | --- | --- | --- |
+| P1-27 Teams list | `/app/teams/`; heading, Name/Leader/Members columns, filters and nonempty result including Quantum Materials Studio | `leader`; Quantum Materials Studio, led by Elina Varrel | `list-view` with `{"entity":"teams","state":"default"}`; viewport |
+| P1-28 Team Information | `/app/teams/{id}` Information tab; heading, leader and populated members with dates/status; no open sheet or menu | `leader`; Quantum Materials Studio, led by Elina Varrel | `team-section` with `{"team":"Quantum Materials Studio","section":"information"}`; region |
+
+No separate edit-sheet image is needed. P1-27/28 are included in the permanent `screenshot-refresh.json` after visual validation and integration.
+
+## P1 Organizations — confirmed Capture capability
+
+Institutions and Funders share one React list component and one detail component. The two documentary images below are sufficient: one Institutions list illustrates the shared controls, and one Funder Information view illustrates the shared record layout and relationship summary. Separate Funders list and Institution detail images would repeat the interface. The seed-42 fixture contains NVAU (North Vale Academic University) and VRC (Vale Research Council), both referenced by multiple funds. `labmanager` has the relevant organization, fund, project and contract view permissions. The requested NVAU row and VRC summary figures passed result and PNG validation. The fixture does not establish populated contacts or additional-information values; these are explained in text and are not capture gates.
+
+| Requested screen | React route and expected settled state | Demo anchor | Confirmed Capture branch |
+| --- | --- | --- | --- |
+| P1-29 Institutions list | `/app/organizations/institutions`; heading, short/full name columns, search, sorting, result count and NVAU row; no loading or open sheet | `labmanager`; NVAU — North Vale Academic University | `list-view` with `{"entity":"institutions","state":"default"}`; viewport |
+| P1-30 Funder Information | `/app/organizations/funders/{id}`; Information tab selected, VRC title/short name and settled project/contract summary, with additional-information section or empty state | `labmanager`; VRC — Vale Research Council | `organization-section` with `{"entity":"funder","organization":"VRC — Vale Research Council","section":"information"}`; region |
+
+These branches are confirmed in the existing JSON v1 Capture pipeline. `P1-organizations-001` returned two matching successes; both PNGs exist, passed visual review and are integrated in the guide and permanent `screenshot-refresh.json`.
+
+## P1 Reports & Exports — confirmed Capture capability
+
+On Employee and Project records, the heading action menu offers **Export Word** and/or **Export PDF** only when the record's `can_export_word` / `can_export_pdf` capability permits. Choosing a format opens `ReportExportDialog`; React fetches templates for that entity, record and format. The first template is selected when present. With no templates the choice and Export action are disabled; a fetch failure shows an error. Employee reports alone have From/To dates (default previous year through today, individually clearable, validated in order). Project reports have no timeframe controls. On Export, React requests server generation and downloads the returned `.docx` or `.pdf`; failure stays in the dialog. There is no React file preview.
+
+Capture has validated `scenario=entity-report` with required `entity=employee|project`, `target` and `format=word|pdf`. Profile `labmanager` reaches both selected records. The demo deployment now exposes compatible templates, and Capture confirmed a selected template and enabled Export button for both combinations below. The existing JSON v1 contract is unchanged.
+
+| Requested screen | React context and settled state | Confirmed Capture parameters | Output |
+| --- | --- | --- | --- |
+| P1-24 Employee Word dialog | Camille ORREN → Export Word; selected template, From/To period, enabled Export; no loading or action menu overlay | `{"entity":"employee","target":"Camille ORREN","format":"word"}` | `reports-and-exports/employee-word-dialog.png` |
+| P1-25 Project PDF dialog | ORION — Optical Resilience → Export PDF; selected template, enabled Export, no From/To period, loading or action menu overlay | `{"entity":"project","target":"ORION — Optical Resilience","format":"pdf"}` | `reports-and-exports/project-pdf-dialog.png` |
+
+The `P1-reports-001` batch returned two matching successes. Both PNGs passed visual review, are integrated in the guide and are included in `screenshot-refresh.json`. The list-export dialog is a different React workflow on Employees, Projects, Teams, Contracts and financial tools, with XLSX/CSV/TSV/XLS choices and current filters; text is sufficient for this P1 guide. No legacy report-selection route or generated-file screenshot is needed.
+
+## P1 Settings & Preferences — confirmed Capture capability
+
+React exposes five authenticated personal routes under `/app/settings`: `user`, `interface`, `notifications`, `common` (Favorites and subscriptions), and `stale` (dashboard alert horizons). The account menu opens `/app/settings/user`; `/app/settings` redirects there. `lists/:groupKey` manages shared lists, and `admin/*` is restricted to staff. Neither belongs to this personal guide. All five personal routes are available to the normal `employee` profile. The three requested images below cover the account landing page, the compact interface controls, and the distinct notification controls. Common and Stale are accurately described in text without separate images.
+
+Capture has validated `settings-section` with profile `employee`, required `parameters.section` and the values `user|interface|notifications|favorites|stale-alerts`. The semantic `favorites` and `stale-alerts` values map to React routes `/app/settings/common` and `/app/settings/stale`; only `user`, `interface` and `notifications` are requested in this batch. Capture confirmed each requested section active, API-backed settings settled and no stray interface. The JSON v1 contract and existing scenarios are unchanged.
+
+| Requested screen | React route | Expected section and state | Profile | Confirmed Capture parameters |
+| --- | --- | --- | --- | --- | --- |
+| P1-31 account landing | `/app/settings/user` | User settings selected; account facts, linked Employee if present, email list/actions or honest empty state; no password sheet | `employee` | `{"section":"user"}`; viewport |
+| P1-32 interface | `/app/settings/interface` | Interface selected; login destination, current-organization switch, map provider and theme choices with saved values | `employee` | `{"section":"interface"}`; region |
+| P1-33 notifications | `/app/settings/notifications` | Notifications selected; email status, frequency, language and useful notification controls; no loading | `employee` | `{"section":"notifications"}`; viewport |
+
+`/app/settings/common` lists favorites and subscriptions with immediate Remove actions; `/app/settings/stale` has four non-negative month inputs used by dashboard summaries. Capture supports these routes through the `favorites` and `stale-alerts` semantic values, but no image of either is necessary for this initial guide. The notification leave Calendar/List choice affects email presentation. The global calendar's Calendar/Resources mode is selected on the calendar page, not by a personal UserSetting. `P1-settings-001` returned three matching successes. P1-31/32/33 passed visual review, are integrated in the guide and are included in `screenshot-refresh.json`.
 
 ## Future documentation needs and coverage matrix
 
@@ -150,7 +199,7 @@ Do not implement a general editing framework for create/update forms. If a P1 wo
 | P1-03 People: read absences | Leave | Camille ORREN; employee | Table with two absences; R | `employee-section(employee=Camille ORREN,section=leave,view=table)` | Done / A |
 | P1-05 Projects: see participants and allocation | Participants | ORION; employee | Participant rows with role, allocation and period; R | `project-section(project=ORION,section=participants)` | P1 / B; ensure workload visible or use a second planning image |
 | P1-06 Projects: see tasks and milestones | Planning | ORION; employee | Task/milestone rows and dates; R | `project-planning(project=ORION,view=tasks)` and `view=milestones` if one image cannot show both | P1 / B |
-| P1-07 Projects: read project calendar | Project calendar | ORION; employee | Month, period and filters; R | `calendar(scope=project,project=ORION,view=month)` | P1 / B; may reuse P1-21 |
+| P1-07 Projects: read project calendar | Project calendar | ORION; employee | Month, period and filters; R | `calendar(scope=project,project=ORION,view=month)` | P1 / integrated; distinct from the global Projects Gantt |
 | P1-08 Finance: find project funding | View a fund | ORION / DM-ORION-BRIDGE; labmanager | Fund table with period and balance; R | `project-finance(project=ORION,section=funds)` | P1 / integrated from `P1-finance-001` |
 | P1-09 Projects: explain overdue item | Planning | SELENE or LYRA; leader | Visible overdue item in ended project; R | `project-planning(project=verified fixture,view=tasks,state=overdue)` | P1 conditional / B after fixture check |
 | P1-10 Finance: read fund overview | View a fund | ORION / DM-ORION-BRIDGE; labmanager | Selected fund and overview totals; R | `project-finance(project=ORION,section=fund-overview,fund=DM-ORION-BRIDGE)` | P1 / integrated from `P1-finance-001` |
@@ -160,15 +209,15 @@ Do not implement a general editing framework for create/update forms. If a P1 wo
 | P1-14 Finance: explain low remaining balance | View a fund | DM-ORION-BRIDGE candidate; labmanager | Distinct low balance if visible; R | Reuse `project-finance(section=fund-overview)` only if needed | P1 / conditional |
 | P1-15 Finance: explain unused balance | View a fund | DM-HELIX-GRANT candidate; labmanager | Distinct high balance if visible; R | `project-finance(section=fund-overview)` after project and UI check | P1 / conditional |
 | P1-16 Finance: explain trend | No Finance page | — | No standalone fund curve; — | No Finance scenario | P1 / not needed; Dashboard widget later |
-| P1-17 Dashboards: read personal view | Use your dashboard | Employee overview; employee | Settled project, milestone, task and leave widgets; V | `dashboard(template=employee)` | P1 / supported; batch deferred |
-| P1-18 Dashboards: read leader view | Use your dashboard | Team overview; leader | Managed projects, team, funds and contracts; V | `dashboard(template=leader)` | P1 / missing template value |
-| P1-19 Dashboards: read lab view | Use your dashboard | Laboratory overview; labmanager | Projects, funds, contracts and employee movements; V | `dashboard(template=labmanager)` | P1 / missing template value; React key `lab-manager` |
-| P1-20 Calendars: read personal dates | Calendars | Synthetic leave/events; employee | Month and events; R | `calendar(scope=personal,view=month)` | P1 / B |
-| P1-21 Calendars: read project dates | Calendars | ORION; leader | Month and project events; R | `calendar(scope=project,project=ORION,view=month)` | P1 / B; reuse P1-07 if fit |
-| P1-22 Calendars: resource timeline | Resource calendar | Synthetic resources; lab manager | Timeline, period and filters; R | `calendar(scope=resource)` after view/profile check | P1 conditional / B |
+| P1-17 Dashboards: read personal view | Use your dashboard | Employee overview; employee | Settled project, milestone, task and leave widgets; V | `dashboard(template=employee)` | P1 / requested in `P1-dashboards-001` |
+| P1-18 Dashboards: read leader view | Use your dashboard | Team overview; leader | Managed projects, team, funds and contracts; V | `dashboard(template=leader)` | P1 / requested in `P1-dashboards-001` |
+| P1-19 Dashboards: read lab view | Use your dashboard | Laboratory overview; labmanager | Projects, funds, contracts and employee movements; V | `dashboard(template=labmanager)` | P1 / requested in `P1-dashboards-001`; alias resolved by Capture |
+| P1-20 Calendars: read global General calendar | Calendars | Synthetic leave/events; employee | Month and events; R | `calendar(scope=personal,view=month)` | P1 / integrated from `P1-calendars-001`; target `/app/calendars` |
+| P1-21 Calendars: read global Project calendar | Calendars | Visible projects; employee | Cross-project Gantt; R | Needs a bounded global-projects tab value; existing `scope=project` is a single project record | P1 / text prepared, image deferred |
+| P1-22 Calendars: global Resources mode | Calendars | Visible employees; employee | Employee rows, visibility selector and leave events; R | Needs bounded `mode=resources` with `scope=personal,view=month`; `scope=resource` does not describe the React screen | P1 / text prepared, image deferred |
 | P1-23 Common lists: show applied filter | Search and filters | Camille or ORION; employee | Filter, count, matching row; I | `list-view(entity=people\|projects,state=filtered,anchor=matching fixture)` | P1 / B; choose one actual list |
-| P1-24 Export: find action | Exports and printing | ORION; leader | Export control/menu open; I | `export-action(source=project-record,record=ORION)` | P1 conditional / B; verify action and format |
-| P1-25 Reports: choose historical report | Reports and formats | Synthetic report; leader | Report chooser; V | `report-selection` | P1 conditional / C; legacy scope first |
+| P1-24 Employee Word report | Generate reports | Camille ORREN; labmanager | React ReportExportDialog, Word template and dates; I | `entity-report(entity=employee,target=Camille ORREN,format=word)` | P1 / integrated from `P1-reports-001` |
+| P1-25 Project PDF report | Generate reports | ORION — Optical Resilience; labmanager | React ReportExportDialog, PDF template, no dates; I | `entity-report(entity=project,target=ORION — Optical Resilience,format=pdf)` | P1 / integrated from `P1-reports-001` |
 | P1-26 Favorites: revisit saved item | Favorites/settings | ORION; employee | Favorite item visible; R | No new primitive yet; `home` if recent/favorite is visible, else dedicated state after UI check | P1 conditional / C |
 | Matrix: create/edit project | Project guide | ORION; leader | Permitted action and form; I | `action-sheet(subject=project,action=create\|edit)` only after verification | P1 conditional / C |
 | Matrix: create/edit task or milestone | Planning | ORION; leader | Permitted detail/form; I | `action-sheet(subject=task\|milestone,action=create\|edit)` after verification | P1 conditional / C |
@@ -178,10 +227,10 @@ Do not implement a general editing framework for create/update forms. If a P1 wo
 | Matrix P2: advanced search and suggestions | Advanced search | ORION; profile TBD | Query builder/suggestions; I | Dedicated advanced-search after verification | P2 / C |
 | Matrix P2: Gantt and dependencies | Gantt guide | ORION; leader | Timeline and visible link; R | `project-planning(project=ORION,view=gantt)` | P2 / C; confirm dependency fixture |
 | Matrix P2: personalise dashboard | Dashboard editor | Template TBD; authorised profile | Editor and widget controls; V/I | Dedicated dashboard-editor after verification | P2 / C |
-| Matrix P2: cross-record contracts/funds | Transversal tools | Demo contract/fund; profile TBD | Searchable cross-record result; V | Dedicated explorer family only after UI check | P2 / C |
-| Matrix P2: import preview | Imports | Synthetic import; authorised profile | Validated preview; V/I | Dedicated import-preview after verification | P2 / C |
+| P1 Tools: cross-record contracts | Tools | Demo contract; labmanager | Searchable cross-record result; V | `list-view(entity=contracts,state=default)` confirmed; see P1 Tools | P1 / integrated |
+| P1 Tools: import entry | Tools | Employees profile; admin | Type selected, template and file chooser; V | `tool-view(tool=import,selection=employees)` confirmed; see P1 Tools | P1 / integrated |
 | Matrix P3: team/organisation/resource view | Reference guides | Demo team/org/resources; profile TBD | Record or timeline, if in v1 scope; R | Reuse record-section/calendar only after concrete need and fixture | P3 conditional / outside initial implementation |
-| Matrix P3: notes, hierarchy, settings, reports/plugins | Reference guides | Camille or fixture TBD; profile TBD | Specific visible state, if documented; R/I | Reuse overview/report-selection where fit; otherwise specify after UI audit | P3 conditional / outside initial implementation |
+| Matrix P3: notes, hierarchy, settings, reports/plugins | Reference guides | Camille or fixture TBD; profile TBD | Specific visible state, if documented; R/I | Reuse a confirmed React record/dialog state where fit; otherwise specify after UI audit | P3 conditional / outside initial implementation |
 
 The final two P3 rows group topics that have no approved screenshot request. They are explicitly outside the initial catalogue, not silently omitted. P0 navigation/home/search and People have no additional required image in current P1 work. The current P0 people overview already shows the empty additional-information area; do not fabricate Generic Info data.
 
@@ -206,15 +255,38 @@ Use the existing result's failed-capture status/error field if available; confir
 2. Project Funds, selected-fund Overview/Expenses and project Budgets are implemented as distinct `project-finance` sections. Participants remain a block on Project Overview; tasks and milestones are filtered views of one planning section.
 3. Confirm a seed-42 overdue item on SELENE or LYRA, and which of DM-ORION-BRIDGE / DM-HELIX-GRANT actually demonstrates low versus high remaining balance.
 4. Confirm calendar scopes and labels. Only month is required initially; resource timeline and 15-day, 2-month and year variants require a concrete page need plus verified UI support.
-5. Confirm whether project calendar P1-07/P1-21 can reuse one image, whether participants include a readable workload, and whether tasks/milestones fit a single useful region.
-6. Confirm list filter semantics and export source/profile. `list-view` must not claim support for fund/expense/contract lists until their behavior is checked. Confirm legacy reports/favorites scope before any dedicated scenario.
+5. P1-07 is the calendar within one project; P1-21 is the global multi-project Gantt and cannot reuse that image. Participants and tasks/milestones already have integrated images.
+6. Confirm list filter semantics and export source/profile. `list-view` must not claim support for fund/expense/contract lists until their behavior is checked. The React Employee/Project report dialog is audited above; confirm favorites scope separately before any dedicated scenario.
 7. Confirm the error field and skipped/failed conventions in the existing v1 result implementation; retain the v1 request contract.
 
 ## Recommended implementation order
 
 1. **A:** centralise common waits/validation; add `employee-section` and `project-section` with compatibility aliases; parameterise `global-search` while retaining `home` and `navigation`. Prove equivalence using the nine completed captures, without changing their published PNGs.
 2. **B for Projects:** `project-planning(view=tasks|milestones)`, `calendar(scope=project,view=month)` and `project-section(section=participants)` are implemented for ORION with `employee` and used in `P1-projects-001`. Project funds are covered by the completed Finance batch; overdue planning remains later work.
-3. **Finance complete:** `project-finance` and `financial-explorer(view=fund-items)` were used with `labmanager` in `P1-finance-001`; all five captures are integrated. The Dashboard `leader` and `labmanager` values are specified above and await Capture support; personal calendar, list/filter and export families remain for their respective lots. No Finance curve scenario is needed.
-4. **C:** add later families only for confirmed P2/P3 guides. Keep report, favorite, edit, print and import workflows outside the initial implementation.
+3. **Finance complete:** `project-finance` and `financial-explorer(view=fund-items)` were used with `labmanager` in `P1-finance-001`; all five captures are integrated. The Dashboard `employee`, `leader` and `labmanager` values are validated and requested in `P1-dashboards-001`; personal calendar, list/filter and export families remain for their respective lots. No Finance curve scenario is needed.
+4. **C:** add later families only for confirmed P2/P3 guides. The bounded Import entry state needed by P1 Tools is now confirmed below; other edit, print and favorite states remain conditional.
 
-`P1-finance-001` is the current matching request/result pair. The five Finance PNGs passed the result, existence and visual review gates and are integrated.
+`P1-tools-001` completed with two validated successes (Contracts and Import) and one failed Organization chart attempt. The targeted `P1-tools-organization-chart-001` retry with `labmanager` succeeded. All three Tools images are integrated; `screenshot-refresh.json` contains 34 images. P1-21/22 remain text-only.
+
+## P1 Tools — completed captures
+
+Three already selected views now have validated semantic states in the existing JSON v1 pipeline. `financial-explorer(view=fund-items,anchor=DM-HELIX-GRANT)` and integrated P1-13 already cover Fund explorer, so it is not recaptured. Budget explorer, Expenses and Data consistency remain text-only; no Capture extension is required for this lot.
+
+| Capture | React route and settled state | Confirmed request and profile |
+| --- | --- | --- |
+| P1-34 Organization chart | `/app/tools/organization-chart`; populated and fully rendered hierarchy, Search/Current only/Fit/Print controls, no open search results, loading or overlay | `tool-view`, `{"tool":"organization-chart"}`, `labmanager` (Noé), viewport |
+| P1-35 Contract Hub | `/app/tools/contracts`; transversal Contracts list with filters, headings, result count and nonempty rows; no open detail or export dialog | `list-view`, `{"entity":"contracts","state":"default"}`, `labmanager`, viewport |
+| P1-36 Import | `/app/tools/import`; Employees selected, template download and file chooser visible; no file loaded or operation started | `tool-view`, `{"tool":"import","selection":"employees"}`, `admin`, viewport |
+
+Capture confirmed all three branches and their profiles. `P1-tools-001` returned success for P1-35 Contracts and P1-36 Import; both images passed visual review and are integrated in the guide and permanent refresh manifest. `labmanager` cannot access Import; P1-36 uses `admin`. The original P1-34 attempt failed before creating a PNG. The corrected Organization chart primitive was validated with 31 visible Employee nodes and relationships using `labmanager` (Noé), with stable framing, no loader and no stray panel. The previous PNG with `employee` showed only Camille ORREN and was rejected visually. The `P1-tools-organization-chart-001` request contained **only P1-34**, using `labmanager` and `tool-view(tool=organization-chart)`. It returned one success; the Noé PNG shows the full multi-node hierarchy and visible edges without loading or stray panel. P1-34 passed visual review and is integrated in the guide and permanent refresh manifest.
+
+## Admin — Instance administration: confirmed Capture capabilities
+
+Capture has validated both states with `profile=admin` and the existing JSON v1 runner:
+
+| Required screen | React route | Confirmed primitive | Expected stable state |
+| --- | --- | --- | --- |
+| General instance settings | `/app/settings/admin/general` | `admin-settings-section`, `{"section":"general"}` | General active; global setting rows and current values loaded; no edit sheet, loader or stray menu |
+| Fund reference-list group | `/app/settings/lists/fund` | `admin-reference-list`, `{"group":"fund"}` | Fund group active; cost-type hierarchy and controls loaded; no form, loader or stray menu |
+
+The two requested states are in `ADMIN-instance-001`; the prior Capture extension requirement is resolved. Data consistency (`/app/tools/data-consistency`) is documented without a new image because no nonempty, stable demo issue has been confirmed. Do not add it to this batch by assumption.

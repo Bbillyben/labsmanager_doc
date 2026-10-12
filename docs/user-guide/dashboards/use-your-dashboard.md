@@ -14,6 +14,20 @@ The demonstration dataset prepares these starting views:
 | **Team overview** | Managed projects and deadlines, team members and leave, visible funds, and contracts requiring attention. |
 | **Laboratory overview** | Visible projects and overdue items, upcoming milestones, funds including those ending soon, contracts and employee movements. |
 
+The screenshots below show the three default personal dashboards in the demonstration dataset.
+
+### Employee overview
+
+![Employee overview dashboard with projects, milestones, tasks and leave widgets](../../assets/screenshots/dashboards/employee.png)
+
+### Team overview
+
+![Team overview dashboard with projects, people, funding and contract widgets](../../assets/screenshots/dashboards/leader.png)
+
+### Laboratory overview
+
+![Laboratory overview dashboard with projects, funding, contracts and employee widgets](../../assets/screenshots/dashboards/lab-manager.png)
+
 These are starting layouts, not fixed access levels. A widget may be empty when there is no matching visible information. The same template can show different results for different users.
 
 ## Create your first dashboard
