@@ -1,5 +1,5 @@
 # Project
-site_url: https://labsmanager-doc.readthedocs.io
+site_url: !ENV [READTHEDOCS_CANONICAL_URL, "http://127.0.0.1:8000/"]
 site_name: LabsManager Documentation
 site_description: LabsManager - open source science lab management
 site_author: Bbillyben
